@@ -1,0 +1,139 @@
+# menus
+
+main_nav:
+  - link: home
+  - link: favorites
+    children:
+      - link: favorites_standard
+      - link: favorites_historical
+      - link: favorites_searches
+      - link: favorites_requirements
+  - link: resources
+    children:
+      - link: resources_guides
+      - link: resources_federal
+      - link: resources_charts
+  - link: new_search
+  - link: new_survey
+
+secondary_nav:
+  - link: settings
+    children:
+      - link: settings_profile
+      - link: settings_company
+      - link: settings_users
+  - link: help
+    attrs: "target='_blank'"
+  - link: legal
+    attrs: "data-bs-toggle='modal' data-bs-target='#legalModal'"
+  - link: sign_out
+
+# links
+
+new_search:
+  title: "New Search"
+  nav_title: "Search"
+  link: /search-new.html
+  icon: binoculars
+
+search:
+  title: "Search"
+  link: /search.html
+
+new_survey:
+  title: "New Survey"
+  link: /survey-new.html
+  icon: journal-bookmark
+
+survey:
+  title: "My Survey"
+  link: /survey.html
+
+requirement:
+  link: /requirement.html
+
+citation:
+  link: /citation.html
+
+defined_term:
+  link: /defined-term.html
+
+home:
+  title: "Home"
+  link: "/"
+  icon: "house"
+  main_nav: true
+
+favorites:
+  title: "Favorites"
+  link: /favorite-surveys.html
+  icon: "star"
+
+favorites_standard:
+  title: Standard Surveys
+  link: /favorite-surveys.html
+
+favorites_historical:
+  title: Historical Surveys
+  link: /favorite-historical.html
+
+favorites_searches:
+  title: Searches
+  link: /favorite-searches.html
+
+favorites_requirements:
+  title: Requirements
+  link: /favorite-requirements.html
+
+resources:
+  title: "Resources"
+  link: /agency-guides.html
+  icon: "book"
+
+resources_guides:
+  title: Agency Guides
+  link: /agency-guides.html
+
+resources_federal:
+  title: Federal
+  link: /federal.html
+
+resources_charts:
+  title: Reference Charts
+  link: /reference-charts.html
+
+settings:
+  title: "Settings"
+  link: /settings.html
+  icon: "gear"
+
+settings_profile:
+  title: Profile
+  link: /settings.html
+
+settings_users:
+  title: Manage Users
+  link: /manage-users.html
+
+settings_user:
+  title: User Name
+  link: /manage-user.html
+
+settings_company:
+  title: Company
+  link: /manage-company.html
+
+legal:
+  title: "Legal"
+  link: "#"
+  icon: "c-circle"
+
+help:
+  title: "Help"
+  link: "https://www.winnow.law/help/"
+  icon: "question-circle"
+
+sign_out:
+  title: "Sign Out"
+  link: https://www.winnow.law
+  icon: "box-arrow-right"

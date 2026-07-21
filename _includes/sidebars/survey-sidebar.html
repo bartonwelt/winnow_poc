@@ -1,0 +1,26 @@
+<div id="sidebar_subnav" class="app-sidebar app-sidebar-subnav sidebar-{{ include.location }}">
+    <div class="sidebar-content">
+        <div class="border-bottom mb-3">
+            {% include sidebars/sidebar-section-header.html title="Default Criteria" link="Disable" %}
+            <div class="mb-3">
+                {% for i in (1..5) %}
+                <a class="btn btn-sm btn-outline-secondary mb-1">
+                    Criteria
+                    <i class="bi bi-x-lg"></i>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="border-bottom">
+            {% include sidebars/sidebar-section-header.html title="Survey Criteria" link="Clear All (#)" %}
+            <div class="mb-3">
+                {% for i in (1..5) %}
+                <a class="btn btn-sm btn-outline-primary mb-1">
+                    Criteria
+                    <i class="bi bi-x-lg"></i>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

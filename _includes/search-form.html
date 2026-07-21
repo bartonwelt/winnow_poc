@@ -1,0 +1,107 @@
+<form>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="" data-bs-toggle="collapse" href="#collapseCriteria" role="button" aria-expanded="true" aria-controls="collapseCriteria">
+                        Search Criteria
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    These criteria are required to perform a search.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseCriteria" aria-expanded="false" aria-controls="collapseCriteria" onclick="toggleBtnClass(criteriaToggle, 'bi-chevron-left', 'bi-chevron-down')">
+                <i class="bi bi-chevron-down" id="criteriaToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse show" id="collapseCriteria">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="searchTerm" class="form-label" required>Search Term</label>
+                    <input type="text" class="form-control" id="searchTerm" placeholder="Keywords, citation number, etc." onblur="passButtonParams(this.id, searchButton, '{{ site.data.navigation.search.link }}')">
+                </div>
+                <div class="">
+                    <label for="productType" class="form-label" required>Product Type</label>
+                    <select class="form-select" id="productType">
+                        <option selected>Select One</option>
+                        <option>All Products</option>
+                        <optgroup label="Individual Products">
+                            {% for product in site.data.forms.product_type %}
+                                <option value="product_{{ forloop.index }}">{{ product.title }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="" data-bs-toggle="collapse" href="#collapseOptionalCriteria" role="button" aria-expanded="true" aria-controls="collapseOptionalCriteria">
+                        Optional Criteria
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    These criteria are required to perform a search.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseOptionalCriteria" aria-expanded="false" aria-controls="collapseOptionalCriteria" onclick="toggleBtnClass(optionalCriteriaToggle, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="optionalCriteriaToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse" id="collapseOptionalCriteria">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="loanPhase" class="form-label" required>Loan Phase / Subject Matter</label>
+                    <select class="form-select" id="loanPhase">
+                        <option selected>Select One</option>
+                        <optgroup label="Loan Phase">
+                            {% for loan_phase in site.data.forms.loan_phase %}
+                                <option value="loan_phase_{{ forloop.index }}">{{ loan_phase.title }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Subject Matter">
+                            {% for subject_matter in site.data.forms.subject_matter %}
+                                <option value="subject_matter_{{ forloop.index }}">{{ subject_matter.title }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="jurisdiction" class="form-label" required>Jurisdiction</label>
+                    <select class="form-select" id="jurisdiction">
+                        <option selected>Select One</option>
+                        {% for jurisdiction in site.data.forms.jurisdiction %}
+                            <option value="jurisdiction{{ forloop.index }}">{{ jurisdiction.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="effectiveDate" class="form-label" required>Effective Date</label>
+                    <input type="date" class="form-control" id="effectiveDate" min="2021-03-20" max="{{ 'now' | date: '%Y-%m-%d' }}">
+                    <div class="form-text">
+                        Build a survey at a specific point in history. Surveys with an effective date will not generate notifications.
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="entityType" class="form-label" required>Entity Type</label>
+                    <select class="form-select" id="entityType">
+                        <option selected>Select One</option>
+                        {% for entity_type in site.data.forms.entity_type %}
+                            <option value="entity_type{{ forloop.index }}">{{ entity_type.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="">
+                    <label for="licenses" class="form-label" required>Applicable Licenses</label>
+                    <select class="form-select" id="licenses">
+                        <option selected>Select One</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

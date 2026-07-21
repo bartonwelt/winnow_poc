@@ -1,0 +1,19 @@
+<div class="sidebar-section-header mb-3">
+    <label class="form-label">{{ include.title }}</label>
+    {% if include.buttons %}
+    <div>
+        <span data-bs-toggle="tooltip" data-bs-title="Toggle All"></span>
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="bi bi-arrows-expand"></i>
+            </button>
+        </span>
+        <span data-bs-toggle="tooltip" data-bs-title="Toggle Section"></span>
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="bi bi-chevron-down"></i>
+            </button>
+        </span>
+    </div>
+    {% elsif include.link %}
+    <a href="#" class="small">{{ include.link }}</a>
+    {% endif %}
+</div>

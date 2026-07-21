@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Winnow POC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="bg-light ">
+  <div class="wrapper">
+    <div id="sidebar" class="app-sidebar">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div id="main_nav">
+                <div id="brand" class="mb-3">
+                    <a href="/" class="navbar-brand">
+                        <img src="/assets/images/winnow-icon.svg" style="width: 3.5rem;" />
+                    </a>
+                </div>
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/" class="btn btn-light text-start " >
+                            <i class="bi bi-house"></i>
+                            
+                                Home
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/favorite-surveys.html" class="btn btn-light text-start " >
+                            <i class="bi bi-star"></i>
+                            
+                                Favorites
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/agency-guides.html" class="btn btn-light text-start " >
+                            <i class="bi bi-book-fill"></i>
+                            
+                                Resources
+                            
+                        </a>
+                        
+                            <div class="d-grid gap-2">
+                                
+                                    
+                                    <a href="/agency-guides.html" class="btn btn-light text-start active" >
+                                        Agency Guides
+                                    </a>
+                                
+                                    
+                                    <a href="/federal.html" class="btn btn-light text-start " >
+                                        Federal
+                                    </a>
+                                
+                                    
+                                    <a href="/reference-charts.html" class="btn btn-light text-start " >
+                                        Reference Charts
+                                    </a>
+                                
+                            </div>
+                        
+                    
+                        
+                        <a href="/search-new.html" class="btn btn-light text-start " >
+                            <i class="bi bi-binoculars"></i>
+                            
+                                Search
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/survey-new.html" class="btn btn-light text-start " >
+                            <i class="bi bi-journal-bookmark"></i>
+                            
+                                New Survey
+                            
+                        </a>
+                        
+                    
+                </div>
+            </div>
+            <div id="secondary_nav" class="border-top pt-2">
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/settings.html" class="btn btn-light text-start " id="nav-settings" >
+                            <i class="bi bi-gear"></i>
+                            Settings
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law/help/" class="btn btn-light text-start " id="nav-help" target='_blank'>
+                            <i class="bi bi-question-circle"></i>
+                            Help
+                        </a>
+                        
+                    
+                        
+                        <a href="#" class="btn btn-light text-start " id="nav-legal" data-bs-toggle='modal' data-bs-target='#legalModal'>
+                            <i class="bi bi-c-circle"></i>
+                            Legal
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law" class="btn btn-light text-start " id="nav-sign-out" >
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sign Out
+                        </a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <main class="d-flex flex-column flex-grow-1 justify-content-between bg-white rounded shadow-sm">
+      <div class="container-fluid d-flex flex-column flex-grow-1 px-2 pb-2 px-lg-4 pb-lg-2">
+        <div class="row page-header-wrapper sticky-top bg-white">
+          <div class="col-12">
+            <div class="page-header d-flex align-items-xxl-center justify-content-xxl-between flex-column flex-xxl-row py-4">
+    <div class="page-title flex-grow-1">
+        <h1 class="h3 m-0" id="pageTitle">Agency Guides</h1>
+        
+    </div>
+    <div class="page-menu">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end text-nowrap">
+            
+                <span data-bs-toggle="tooltip" data-bs-title="Options">
+  <div class="dropdown">
+    <button class="btn btn-secondary" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenu">
+      <li><button class="dropdown-item" type="button">Show Hints</button></li>
+    </ul>
+  </div>
+</span>
+            
+            <span data-bs-toggle="tooltip" data-bs-title="Winnow AI">
+                <!-- <button id="magicToggle" class="btn btn-secondary active" type="button" data-bs-toggle="collapse" data-bs-target="#assistant" aria-expanded="true" aria-controls="assistant" onclick="toggleBtnClass(magicToggle, 'active')">
+                    <i class="bi bi-magic"></i>
+                </button> -->
+                <button id="magicToggle" class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#assistant" aria-controls="#assistant">
+                    <i class="bi bi-magic"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+        
+            <div class="card mb-3">
+    <div class="card-body d-flex align-items-center justify-content-between">
+        <ul class="list-unstyled list-inline m-0">
+            <li class="list-inline-item">
+                <strong>25</strong> Results
+            </li>
+        </ul>
+        <form class="row row-cols-lg-auto g-2 align-items-center">
+            <div class="col-12">
+                <div class="input-group">
+                    <span class="input-group-text" id="orderByAddon">Filter:</span>
+                    <label for="resultsOrder" class="visually-hidden">Filter:</label>
+                    <select class="form-select" id="resultsOrder" aria-label="Order By" aria-described-by="orderByAddon">
+                        <option selected="">All Guides</option>
+                        <optgroup label="Agencies">
+                            
+                                <option value="">Fannie Mae</option>
+                            
+                                <option value="">Federal Housing Administration (FHA)</option>
+                            
+                                <option value="">Freddie Mac</option>
+                            
+                                <option value="">Ginnie Mae</option>
+                            
+                                <option value="">United States Department of Agriculture (USDA)</option>
+                            
+                                <option value="">Veterans Affairs (VA)</option>
+                            
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        
+
+<div class="d-table table-hover w-100 table-cards">
+  <div class="d-table-row table-header sticky-top" style="top: var(--navbar-height);">
+    
+      <div class="d-table-cell align-middle p-3  sortable">
+          <label class="form-check-label form-label" for="header_check_1">
+            <a href="" class="d-flex align-items-center">
+              Name
+              <i class="bi bi-arrow-up-short fs-5"></i>
+            </a>
+          </label>
+      </div>
+    
+      <div class="d-table-cell align-middle p-3  sortable">
+          <label class="form-check-label form-label" for="header_check_2">
+            <a href="" class="d-flex align-items-center">
+              Agency
+              
+            </a>
+          </label>
+      </div>
+    
+  </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://selling-guide.fanniemae.com/" class="stretched-link" target="_blank">Selling Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Fannie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://servicing-guide.fanniemae.com/" class="stretched-link" target="_blank">Servicing Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Fannie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://singlefamily.fanniemae.com/selling-and-servicing-guide-forms-and-communications" class="stretched-link" target="_blank">Selling and Servicing Guide Communications and Forms</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Fannie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://singlefamily.fanniemae.com/selling-policy-communications" class="stretched-link" target="_blank">Selling Policy Communications</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Fannie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://singlefamily.fanniemae.com/servicing-policy-communications" class="stretched-link" target="_blank">Servicing Policy Communications</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Fannie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.hud.gov/hudclips/handbooks/housing" class="stretched-link" target="_blank">Single Family Housing Policy Handbook (HUD Handbook 4000.1)</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Federal Housing Administration (FHA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh" class="stretched-link" target="_blank">Housing Handbooks</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Federal Housing Administration (FHA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.hud.gov/program_offices/administration/hudclips/notices/hsg" class="stretched-link" target="_blank">Housing Notices</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Federal Housing Administration (FHA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.hud.gov/program_offices/administration/hudclips/letters/mortgagee" class="stretched-link" target="_blank">Mortgagee Letters</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Federal Housing Administration (FHA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://guide.freddiemac.com/app/guide/" class="stretched-link" target="_blank">Seller / Servicer Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Freddie Mac</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://guide.freddiemac.com/app/guide/forms" class="stretched-link" target="_blank">Forms &amp; Documents</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Freddie Mac</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://guide.freddiemac.com/app/guide/bulletins" class="stretched-link" target="_blank">Recent Bulletins</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Freddie Mac</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.ginniemae.gov/issuers/program_guidelines/Pages/mbs_guide.aspx" class="stretched-link" target="_blank">MBS Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Ginnie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.ginniemae.gov/issuers/program_guidelines/Pages/mostrecentapms.aspx" class="stretched-link" target="_blank">All Participant Memorandums (APMs)</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Ginnie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.ginniemae.gov/issuers/program_guidelines/Pages/notes_news.aspx" class="stretched-link" target="_blank">Notes &amp; News</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Ginnie Mae</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.rd.usda.gov/resources/directives/handbooks" class="stretched-link" target="_blank">All Handbooks</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">United States Department of Agriculture (USDA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.rd.usda.gov/resources/directives/form-letters" class="stretched-link" target="_blank">Form Letters</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">United States Department of Agriculture (USDA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.rd.usda.gov/resources/directives/guide-letters" class="stretched-link" target="_blank">Guide Letters</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">United States Department of Agriculture (USDA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/homeloans/documents/docs/VA_Buyers_Guide.pdf" class="stretched-link" target="_blank">Home Loan Guaranty Buyer's Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/warms/pam26_7.asp" class="stretched-link" target="_blank">Lenders Handbook - 26-7</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/WARMS/M26_4.asp" class="stretched-link" target="_blank">Servicer Handbook - M26-4</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/HOMELOANS/documents/docs/servicer_user_guide.pdf" class="stretched-link" target="_blank">VALERI Servicer User Guide</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/homeloans/resources_circulars.asp" class="stretched-link" target="_blank">Circulars</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://benefits.va.gov/homeloans/lenders.asp" class="stretched-link" target="_blank">Lender Resources</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+    <div class="d-table-row position-relative">
+      
+          <div class="d-table-cell align-middle p-3">
+            <a href="https://www.benefits.va.gov/HOMELOANS/servicers_valeri_guides.asp" class="stretched-link" target="_blank">VALERI Guides and Templates</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">Veterans Affairs (VA)</div>
+        
+      
+    </div>
+  
+</div>
+    </div>
+</div>
+
+        
+          </div>
+        </div>
+        
+      </div>
+      
+    </main>
+    
+    
+      <div id="assistant" class="app-sidebar offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" aria-labelledby="assistant">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div><!-- aligned top -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">
+                        <i class="bi bi-magic text-primary"></i> Winnow AI
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Ask a question. Winnow AI will provide an answer from our comprensive database of state and federal requirements.</p>
+                    <p>Here are some sample questions to get your started:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#">What percent interest rate can I charge for a short-term loan?</a></li>
+                        <li class="mb-3"><a href="#">After I receive a demand from a debtor, can I wait 30 days to release them from their obligation?</a></li>
+                        <li><a href="#">How many locations can I operate under a license?</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-3 border-top"><!-- aligned bottom -->
+                <form>
+                    <div class="d-flex justify-content-between mb-2">
+                        <div class="d-flex">
+                            <div class="btn-group dropup me-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Jurisdiction">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-globe-americas"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Federal</a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Alabama</a></li>
+                                    <li><a class="dropdown-item" href="#">Alaska</a></li>
+                                    <li><a class="dropdown-item" href="#">Arizona</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Product Type">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-credit-card"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Auto Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Direct</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - RISC</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Leases</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <button id="federalBtn" class="btn btn-outline-secondary me-2" type="button" data-bs-toggle="tooltip" data-bs-title="Inlude Federal" onclick="toggleBtnClass(federalBtn, 'active')">
+                                <i class="bi bi-bank2"></i>
+                            </button>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Response Length">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Shorter</a></li>
+                                    <li><a class="dropdown-item active" href="#">Normal</a></li>
+                                    <li><a class="dropdown-item" href="#">Longer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Ask a Question" id="aiSidebarQuery" style="height: 6rem;"></textarea>
+                        <label for="aiSidebarQuery" class="form-label">Ask a Question</label>
+                        <div class="form-text text-end">
+                            <i class="bi bi-arrow-return-right"></i> Hit return to submit
+                        </div>
+                    </div>
+                    <div class="form-text text-center small mt-2">
+                        Disclaimer: Winnow AI may produce answers that contain inaccurate or incomplete information.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+  <div class="modal modal-lg fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="legalModalLabel">Legal Info</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <small class="text-muted">
+          &copy; 2025 Winnow Solutions, LLC. Winnow® is a service mark of Winnow Solutions, LLC. Orrick® and the Orrick logo designs are service marks of Orrick Herrington & Sutcliffe LLP and are used with permission from Orrick Herrington & Sutcliffe LLP. IMPORTANT: Winnow is a software product offered by Winnow Solutions, LLC, which is not engaged in the practice of law. Winnow is not legal advice or a substitute for legal advice from a licensed attorney. The purchase or use of Winnow does not establish an attorney-client relationship with Winnow Solutions, LLC or Orrick Herrington & Sutcliffe LLP.
+          <ul class="list-inline list-unstyled mt-4">
+              <li class="list-inline-item"><a href="https://www.winnow.law/terms-of-use">Terms of Use</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/privacy-policy">Privacy &amp; Cookie Policy</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/disclaimers">Disclaimers</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/help">Help</a></li>
+              <li class="list-inline-item"><a href="mailto:support@winnow.law">Contact Us</a></li>
+          </ul>
+        </small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+label.form-label,
+label.form-label a {
+    color: var(--bs-secondary-color);
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+label.form-label {
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

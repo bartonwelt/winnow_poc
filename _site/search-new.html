@@ -1,0 +1,611 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Winnow POC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="bg-light sidebar-right">
+  <div class="wrapper">
+    <div id="sidebar" class="app-sidebar">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div id="main_nav">
+                <div id="brand" class="mb-3">
+                    <a href="/" class="navbar-brand">
+                        <img src="/assets/images/winnow-icon.svg" style="width: 3.5rem;" />
+                    </a>
+                </div>
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/" class="btn btn-light text-start " >
+                            <i class="bi bi-house"></i>
+                            
+                                Home
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/favorite-surveys.html" class="btn btn-light text-start " >
+                            <i class="bi bi-star"></i>
+                            
+                                Favorites
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/agency-guides.html" class="btn btn-light text-start " >
+                            <i class="bi bi-book"></i>
+                            
+                                Resources
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/search-new.html" class="btn btn-light text-start active" >
+                            <i class="bi bi-binoculars-fill"></i>
+                            
+                                Search
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/survey-new.html" class="btn btn-light text-start " >
+                            <i class="bi bi-journal-bookmark"></i>
+                            
+                                New Survey
+                            
+                        </a>
+                        
+                    
+                </div>
+            </div>
+            <div id="secondary_nav" class="border-top pt-2">
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/settings.html" class="btn btn-light text-start " id="nav-settings" >
+                            <i class="bi bi-gear"></i>
+                            Settings
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law/help/" class="btn btn-light text-start " id="nav-help" target='_blank'>
+                            <i class="bi bi-question-circle"></i>
+                            Help
+                        </a>
+                        
+                    
+                        
+                        <a href="#" class="btn btn-light text-start " id="nav-legal" data-bs-toggle='modal' data-bs-target='#legalModal'>
+                            <i class="bi bi-c-circle"></i>
+                            Legal
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law" class="btn btn-light text-start " id="nav-sign-out" >
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sign Out
+                        </a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <main class="d-flex flex-column flex-grow-1 justify-content-between bg-white rounded shadow-sm">
+      <div class="container-fluid d-flex flex-column flex-grow-1 px-2 pb-2 px-lg-4 pb-lg-2">
+        <div class="row page-header-wrapper sticky-top bg-white">
+          <div class="col-12">
+            <div class="page-header d-flex align-items-xxl-center justify-content-xxl-between flex-column flex-xxl-row py-4">
+    <div class="page-title flex-grow-1">
+        <h1 class="h3 m-0" id="pageTitle">Search</h1>
+        
+    </div>
+    <div class="page-menu">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end text-nowrap">
+            
+                
+<span data-bs-toggle="tooltip" data-bs-title="Options">
+  <div class="dropdown">
+    <button class="btn btn-secondary" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenu">
+      <li><button class="dropdown-item" type="button">Show Hints</button></li>
+    </ul>
+  </div>
+</span>
+            
+            <span data-bs-toggle="tooltip" data-bs-title="Winnow AI">
+                <!-- <button id="magicToggle" class="btn btn-secondary active" type="button" data-bs-toggle="collapse" data-bs-target="#assistant" aria-expanded="true" aria-controls="assistant" onclick="toggleBtnClass(magicToggle, 'active')">
+                    <i class="bi bi-magic"></i>
+                </button> -->
+                <button id="magicToggle" class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#assistant" aria-controls="#assistant">
+                    <i class="bi bi-magic"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+        
+            <form>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="#collapseCriteria" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCriteria">
+                        Search Criteria
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    These criteria are required to perform a search.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseCriteria" aria-expanded="false" aria-controls="collapseCriteria" onclick="toggleBtnClass(criteriaToggle, 'bi-chevron-left', 'bi-chevron-down')">
+                <i class="bi bi-chevron-down" id="criteriaToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse show" id="collapseCriteria">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="searchTerm" class="form-label" required="">Search Term</label>
+                    <input type="text" class="form-control" id="searchTerm" placeholder="Keywords, citation number, etc." onblur="passButtonParams(this.id, searchButton, '/search.html')" />
+                </div>
+                <div class="">
+                    <label for="productType" class="form-label" required="">Product Type</label>
+                    <select class="form-select" id="productType">
+                        <option selected="">Select One</option>
+                        <option>All Products</option>
+                        <optgroup label="Individual Products">
+                            
+                                <option value="product_1">Auto Financing</option>
+                            
+                                <option value="product_2">Banking</option>
+                            
+                                <option value="product_3">Commercial Lending</option>
+                            
+                                <option value="product_4">Consumer Financing</option>
+                            
+                                <option value="product_5">Credit Cards</option>
+                            
+                                <option value="product_6">Money Services Business</option>
+                            
+                                <option value="product_7">Mortgages</option>
+                            
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="#collapseOptionalCriteria" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseOptionalCriteria">
+                        Optional Criteria
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    These criteria are required to perform a search.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseOptionalCriteria" aria-expanded="false" aria-controls="collapseOptionalCriteria" onclick="toggleBtnClass(optionalCriteriaToggle, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="optionalCriteriaToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse" id="collapseOptionalCriteria">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="loanPhase" class="form-label" required="">Loan Phase / Subject Matter</label>
+                    <select class="form-select" id="loanPhase">
+                        <option selected="">Select One</option>
+                        <optgroup label="Loan Phase">
+                            
+                                <option value="loan_phase_1">Marketing / Advertising</option>
+                            
+                                <option value="loan_phase_2">Do I Need a License / Registration</option>
+                            
+                                <option value="loan_phase_3">Obtaining and Maintaining a License / Registration</option>
+                            
+                                <option value="loan_phase_4">Origination</option>
+                            
+                                <option value="loan_phase_5">Servicing</option>
+                            
+                                <option value="loan_phase_6">Unique to Default / Loss Mitigation</option>
+                            
+                        </optgroup>
+                        <optgroup label="Subject Matter">
+                            
+                                <option value="subject_matter_1">Privacy &amp; Cybersecurity</option>
+                            
+                                <option value="subject_matter_2">Military / Servicemember</option>
+                            
+                                <option value="subject_matter_3">Debt Collection</option>
+                            
+                                <option value="subject_matter_4">everse Mortgages</option>
+                            
+                                <option value="subject_matter_5">High Cost</option>
+                            
+                                <option value="subject_matter_6">Higher Priced</option>
+                            
+                                <option value="subject_matter_7">Notary and Electronic Documentation / Signature</option>
+                            
+                                <option value="subject_matter_8">UCC</option>
+                            
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="jurisdiction" class="form-label" required="">Jurisdiction</label>
+                    <select class="form-select" id="jurisdiction">
+                        <option selected="">Select One</option>
+                        
+                            <option value="jurisdiction1">Federal</option>
+                        
+                            <option value="jurisdiction2">Alabama</option>
+                        
+                            <option value="jurisdiction3">Alaska</option>
+                        
+                            <option value="jurisdiction4">Arizona</option>
+                        
+                            <option value="jurisdiction5">Arkansas</option>
+                        
+                            <option value="jurisdiction6">California</option>
+                        
+                            <option value="jurisdiction7">Colorado</option>
+                        
+                            <option value="jurisdiction8">Connecticut</option>
+                        
+                            <option value="jurisdiction9">Delaware</option>
+                        
+                            <option value="jurisdiction10">District of Columbia</option>
+                        
+                            <option value="jurisdiction11">Florida</option>
+                        
+                            <option value="jurisdiction12">Georgia</option>
+                        
+                            <option value="jurisdiction13">Hawaii</option>
+                        
+                            <option value="jurisdiction14">Idaho</option>
+                        
+                            <option value="jurisdiction15">Illinois</option>
+                        
+                            <option value="jurisdiction16">Indiana</option>
+                        
+                            <option value="jurisdiction17">Iowa</option>
+                        
+                            <option value="jurisdiction18">Kansas</option>
+                        
+                            <option value="jurisdiction19">Kentucky</option>
+                        
+                            <option value="jurisdiction20">Louisiana</option>
+                        
+                            <option value="jurisdiction21">Maine</option>
+                        
+                            <option value="jurisdiction22">Maryland</option>
+                        
+                            <option value="jurisdiction23">Massachusetts</option>
+                        
+                            <option value="jurisdiction24">Michigan</option>
+                        
+                            <option value="jurisdiction25">Minnesota</option>
+                        
+                            <option value="jurisdiction26">Mississippi</option>
+                        
+                            <option value="jurisdiction27">Missouri</option>
+                        
+                            <option value="jurisdiction28">Montana</option>
+                        
+                            <option value="jurisdiction29">Nebraska</option>
+                        
+                            <option value="jurisdiction30">Nevada</option>
+                        
+                            <option value="jurisdiction31">New Hampshire</option>
+                        
+                            <option value="jurisdiction32">New Jersey</option>
+                        
+                            <option value="jurisdiction33">New Mexico</option>
+                        
+                            <option value="jurisdiction34">New York</option>
+                        
+                            <option value="jurisdiction35">North Carolina</option>
+                        
+                            <option value="jurisdiction36">North Dakota</option>
+                        
+                            <option value="jurisdiction37">Ohio</option>
+                        
+                            <option value="jurisdiction38">Oklahoma</option>
+                        
+                            <option value="jurisdiction39">Oregon</option>
+                        
+                            <option value="jurisdiction40">Pennsylvania</option>
+                        
+                            <option value="jurisdiction41">Rhode Island</option>
+                        
+                            <option value="jurisdiction42">South Carolina</option>
+                        
+                            <option value="jurisdiction43">South Dakota</option>
+                        
+                            <option value="jurisdiction44">Tennessee</option>
+                        
+                            <option value="jurisdiction45">Texas</option>
+                        
+                            <option value="jurisdiction46">Utah</option>
+                        
+                            <option value="jurisdiction47">Vermont</option>
+                        
+                            <option value="jurisdiction48">Virginia</option>
+                        
+                            <option value="jurisdiction49">Washington</option>
+                        
+                            <option value="jurisdiction50">West Virginia</option>
+                        
+                            <option value="jurisdiction51">Wisconsin</option>
+                        
+                            <option value="jurisdiction52">Wyoming</option>
+                        
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="effectiveDate" class="form-label" required="">Effective Date</label>
+                    <input type="date" class="form-control" id="effectiveDate" min="2021-03-20" max="2026-07-21" />
+                    <div class="form-text">
+                        Build a survey at a specific point in history. Surveys with an effective date will not generate notifications.
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="entityType" class="form-label" required="">Entity Type</label>
+                    <select class="form-select" id="entityType">
+                        <option selected="">Select One</option>
+                        
+                            <option value="entity_type1">Federal Credit Union</option>
+                        
+                            <option value="entity_type2">Federal Thrift</option>
+                        
+                            <option value="entity_type3">National Bank</option>
+                        
+                            <option value="entity_type4">Non-Bank / Non-Credit Union</option>
+                        
+                            <option value="entity_type5">State Chartered Bank</option>
+                        
+                            <option value="entity_type6">State Chartered Credit Union</option>
+                        
+                            <option value="entity_type7">State Chartered Thrift</option>
+                        
+                    </select>
+                </div>
+                <div class="">
+                    <label for="licenses" class="form-label" required="">Applicable Licenses</label>
+                    <select class="form-select" id="licenses">
+                        <option selected="">Select One</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+        
+          </div>
+        </div>
+        
+      </div>
+      <div class="sticky-bottom">
+    <div class="p-3 m-2 bg-light border rounded text-end shadow-sm">
+        <a href="/" class="btn btn-secondary">Cancel</a>
+<a href="/search.html" class="btn btn-primary" id="searchButton">Search</a>
+    </div>
+</div>
+    </main>
+    <div id="sidebar_subnav" class="app-sidebar app-sidebar-subnav">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div class="border-bottom mb-3">
+                <div class="sidebar-section-header mb-3">
+    <label class="form-label">Default Criteria</label>
+    
+    <a href="#" class="small">Disable</a>
+    
+</div>
+                <div class="mb-3">
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 1
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 2
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 3
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 4
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 5
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="border-bottom mb-3">
+                <div class="sidebar-section-header mb-3">
+    <label class="form-label">Added Criteria</label>
+    
+    <a href="#" class="small">Clear All (#)</a>
+    
+</div>
+                <div class="mb-3">
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 1
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 2
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 3
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 4
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 5
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    
+      <div id="assistant" class="app-sidebar offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" aria-labelledby="assistant">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div><!-- aligned top -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">
+                        <i class="bi bi-magic text-primary"></i> Winnow AI
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Ask a question. Winnow AI will provide an answer from our comprensive database of state and federal requirements.</p>
+                    <p>Here are some sample questions to get your started:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#">What percent interest rate can I charge for a short-term loan?</a></li>
+                        <li class="mb-3"><a href="#">After I receive a demand from a debtor, can I wait 30 days to release them from their obligation?</a></li>
+                        <li><a href="#">How many locations can I operate under a license?</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-3 border-top"><!-- aligned bottom -->
+                <form>
+                    <div class="d-flex justify-content-between mb-2">
+                        <div class="d-flex">
+                            <div class="btn-group dropup me-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Jurisdiction">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-globe-americas"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Federal</a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Alabama</a></li>
+                                    <li><a class="dropdown-item" href="#">Alaska</a></li>
+                                    <li><a class="dropdown-item" href="#">Arizona</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Product Type">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-credit-card"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Auto Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Direct</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - RISC</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Leases</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <button id="federalBtn" class="btn btn-outline-secondary me-2" type="button" data-bs-toggle="tooltip" data-bs-title="Inlude Federal" onclick="toggleBtnClass(federalBtn, 'active')">
+                                <i class="bi bi-bank2"></i>
+                            </button>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Response Length">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Shorter</a></li>
+                                    <li><a class="dropdown-item active" href="#">Normal</a></li>
+                                    <li><a class="dropdown-item" href="#">Longer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Ask a Question" id="aiSidebarQuery" style="height: 6rem;"></textarea>
+                        <label for="aiSidebarQuery" class="form-label">Ask a Question</label>
+                        <div class="form-text text-end">
+                            <i class="bi bi-arrow-return-right"></i> Hit return to submit
+                        </div>
+                    </div>
+                    <div class="form-text text-center small mt-2">
+                        Disclaimer: Winnow AI may produce answers that contain inaccurate or incomplete information.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+  <div class="modal modal-lg fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="legalModalLabel">Legal Info</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <small class="text-muted">
+          &copy; 2025 Winnow Solutions, LLC. Winnow® is a service mark of Winnow Solutions, LLC. Orrick® and the Orrick logo designs are service marks of Orrick Herrington & Sutcliffe LLP and are used with permission from Orrick Herrington & Sutcliffe LLP. IMPORTANT: Winnow is a software product offered by Winnow Solutions, LLC, which is not engaged in the practice of law. Winnow is not legal advice or a substitute for legal advice from a licensed attorney. The purchase or use of Winnow does not establish an attorney-client relationship with Winnow Solutions, LLC or Orrick Herrington & Sutcliffe LLP.
+          <ul class="list-inline list-unstyled mt-4">
+              <li class="list-inline-item"><a href="https://www.winnow.law/terms-of-use">Terms of Use</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/privacy-policy">Privacy &amp; Cookie Policy</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/disclaimers">Disclaimers</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/help">Help</a></li>
+              <li class="list-inline-item"><a href="mailto:support@winnow.law">Contact Us</a></li>
+          </ul>
+        </small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

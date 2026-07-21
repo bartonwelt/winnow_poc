@@ -1,0 +1,143 @@
+# table content
+
+surveys:
+  header:
+    - title: Name
+      sortable: true
+    - title: Date Saved
+      sortable: true
+    - title: Actions
+      
+  rows:
+    - title: "Mortgage Servicing Survey"
+      date: Aug 01, 2025
+      link: survey.html
+
+    - title: "Mortgage Servicing - Illinois"
+      date: Aug 01, 2025
+      link: survey.html
+
+    - title: "Licensing Survey"
+      date: Aug 01, 2025
+      link: survey.html
+
+    - title: "Mortgage Servicing Survey"
+      date: Aug 01, 2025
+      link: survey.html
+
+    - title: "Mortgage Servicing - Illinois"
+      date: Aug 01, 2025
+      link: survey.html
+
+searches:
+  header:
+    - title: Name
+      sortable: true
+    - title: Date Saved
+      sortable: true
+    - title: Actions
+      
+  rows:
+    - title: "CA Origination Fees"
+      date: Aug 01, 2025
+      link: search.html
+
+    - title: "FL Usuary"
+      date: Aug 01, 2025
+      link: search.html
+
+    - title: "Nationwide Licensing Laws"
+      date: Aug 01, 2025
+      link: search.html
+
+    - title: "Mortgage Fee Search"
+      date: Aug 01, 2025
+      link: search.html
+
+    - title: "Adverse Action Requirements"
+      date: Aug 01, 2025
+      link: search.html
+
+requirements:
+  header:
+    - title: Name
+      sortable: true
+    - title: Date Saved
+      sortable: true
+    - title: Actions
+      
+  rows:
+    - title: "AK - #12345"
+      date: Aug 01, 2025
+      link: requirement.html
+
+    - title: "FED - #67890"
+      date: Aug 01, 2025
+      link: requirement.html
+
+    - title: "FL - #12345"
+      date: Aug 01, 2025
+      link: requirement.html
+
+    - title: "TX - 67890"
+      date: Aug 01, 2025
+      link: answer.html
+
+    - title: "WA - 12345"
+      date: Aug 01, 2025
+      link: requirement.html
+
+ai:
+  header:
+    - title: Question
+      sortable: true
+    - title: Date Saved
+      sortable: true
+    - title: Actions
+      
+  rows:
+    - title: "What percent interest rate can I charge for a short-term loan?"
+      date: Aug 01, 2025
+      link: #
+
+    - title: "After I receive a demand from a debtor, can I wait 30 days to release them from their obligation?"
+      date: Aug 01, 2025
+      link: #
+
+    - title: "How many locations can I operate under a license?"
+      date: Aug 01, 2025
+      link: #
+
+    - title: "What percent interest rate can I charge for a short-term loan?"
+      date: Aug 01, 2025
+      link: #
+
+    - title: "After I receive a demand from a debtor, can I wait 30 days to release them from their obligation?"
+      date: Aug 01, 2025
+      link: #
+
+news:
+  header:
+    - title: Headline
+    - title: Date
+
+  rows:
+    - title: "Wall Street Gets the Rally Signals From Powell It Was Hoping For"
+      date: Aug 22, 2025
+      link: #
+
+    - title: "Wall Street Has Best Day Since April on Fed Signal: Markets Wrap"
+      date: Aug 22, 2025
+      link: #
+
+    - title: "Jack Henry Agrees to $1.6 Million Settlement Over 401(k) Fees"
+      date: Aug 22, 2025
+      link: #
+
+    - title: "Treasury's Faulkender Stepping Down as Bessent Lauds His Service"
+      date: Aug 22, 2025
+      link: #
+
+    - title: "UBS, Royal Bank of Scotland Face Revived Rate-Rigging Claim"
+      date: Aug 22, 2025
+      link: #

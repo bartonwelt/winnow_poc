@@ -1,0 +1,70 @@
+<div class="border rounded p-4 mb-3">
+    <h2 class="h5">Requirement Details</h2>
+    {% include components/item-list.html dataset="content" content="requirement" %}
+</div>
+<div class="border rounded p-4 mb-3">
+    <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <h2 class="h5">
+                <a href="" data-bs-toggle="collapse" href="#collapseCriteria" role="button" aria-expanded="true" aria-controls="collapseCriteria">
+                    Survey Criteria
+                </a>
+            </h2>
+            <small class="text-muted">
+                These criteria are required to build a survey.
+            </small>
+        </div>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseCriteria" aria-expanded="false" aria-controls="collapseCriteria" onclick="toggleBtnClass(criteriaToggle, 'bi-chevron-left', 'bi-chevron-down')">
+            <i class="bi bi-chevron-down" id="criteriaToggle"></i>
+        </button>
+    </div>
+    <div class="row collapse show" id="collapseCriteria">
+        <div class="col-12 col-xxl-6 pt-4">
+            
+        </div>
+    </div>
+</div>
+<div class="border rounded p-4 mb-3">
+    <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <h2 class="h5">
+                <a href="" data-bs-toggle="collapse" href="#collapseOptionalCriteria" role="button" aria-expanded="true" aria-controls="collapseOptionalCriteria">
+                    Optional Criteria
+                </a>
+            </h2>
+            <small class="text-muted">
+                Extra configuration options for your survey. These are optional.
+            </small>
+        </div>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseOptionalCriteria" aria-expanded="false" aria-controls="collapseOptionalCriteria" onclick="toggleBtnClass(optionalCriteriaToggle, 'bi-chevron-down', 'bi-chevron-left')">
+            <i class="bi bi-chevron-left" id="optionalCriteriaToggle"></i>
+        </button>
+    </div>
+    <div class="row collapse" id="collapseOptionalCriteria">
+        <div class="col-12 col-xxl-6 pt-4">
+            
+        </div>
+    </div>
+</div>
+<div class="border rounded p-4 mb-3">
+    <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <h2 class="h5">
+                <a href="" data-bs-toggle="collapse" href="#collapseTopics" role="button" aria-expanded="false" aria-controls="collapseTopics">
+                    Topics
+                </a>
+            </h2>
+            <small class="text-muted">
+                Specific subject matter for your survey requirements, organized into categories.
+            </small>
+        </div>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics" onclick="toggleBtnClass(topicsToggle, 'bi-chevron-down', 'bi-chevron-left')">
+            <i class="bi bi-chevron-left" id="topicsToggle"></i>
+        </button>
+    </div>
+    <div class="row collapse" id="collapseTopics">
+        <div class="col-12">
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{% assign alert_classes = "alert" %}
+
+{% if include.type %}
+    {% assign alert_type = include.type | prepend: " alert-" %}
+    {% assign alert_classes = alert_classes | append: alert_type %}
+{% else %}
+    {% assign alert_type = "alert-primary" %}
+{% endif %}
+
+{% if include.dismissible %}
+    {% assign alert_dismissible = " alert-dismissible fade show" %}
+    {% assign alert_classes = alert_classes | append: alert_dismissible %}
+{% endif %}
+
+<div class="{{ alert_classes }}" role="alert">
+    {{ include.message }}
+    {% if include.dismissible %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endif %}
+</div>

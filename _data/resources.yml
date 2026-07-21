@@ -1,0 +1,270 @@
+agency_guides:
+  agencies:
+    - Fannie Mae
+    - Federal Housing Administration (FHA)
+    - Freddie Mac
+    - Ginnie Mae
+    - United States Department of Agriculture (USDA)
+    - Veterans Affairs (VA)
+    
+  header:
+    - title: Name
+      sortable: true
+    - title: Agency
+      sortable: true
+
+  rows:
+    - title: Selling Guide
+      agency: Fannie Mae
+      link: https://selling-guide.fanniemae.com/
+
+    - title: Servicing Guide
+      agency: Fannie Mae
+      link: https://servicing-guide.fanniemae.com/
+
+    - title: Selling and Servicing Guide Communications and Forms
+      agency: Fannie Mae
+      link: https://singlefamily.fanniemae.com/selling-and-servicing-guide-forms-and-communications
+
+    - title: Selling Policy Communications
+      agency: Fannie Mae
+      link: https://singlefamily.fanniemae.com/selling-policy-communications
+
+    - title: Servicing Policy Communications
+      agency: Fannie Mae
+      link: https://singlefamily.fanniemae.com/servicing-policy-communications
+
+    - title: Single Family Housing Policy Handbook (HUD Handbook 4000.1)
+      agency: Federal Housing Administration (FHA)
+      link: https://www.hud.gov/hudclips/handbooks/housing
+    
+    - title: Housing Handbooks
+      agency: Federal Housing Administration (FHA)
+      link: https://www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh
+
+    - title: Housing Notices
+      agency: Federal Housing Administration (FHA)
+      link: https://www.hud.gov/program_offices/administration/hudclips/notices/hsg
+
+    - title: Mortgagee Letters
+      agency: Federal Housing Administration (FHA)
+      link: https://www.hud.gov/program_offices/administration/hudclips/letters/mortgagee
+
+    - title: Seller / Servicer Guide
+      agency: Freddie Mac
+      link: https://guide.freddiemac.com/app/guide/
+
+    - title: Forms & Documents
+      agency: Freddie Mac
+      link: https://guide.freddiemac.com/app/guide/forms
+
+    - title: Recent Bulletins
+      agency: Freddie Mac
+      link: https://guide.freddiemac.com/app/guide/bulletins
+
+    - title: MBS Guide
+      agency: Ginnie Mae
+      link: https://www.ginniemae.gov/issuers/program_guidelines/Pages/mbs_guide.aspx
+
+    - title: All Participant Memorandums (APMs)
+      agency: Ginnie Mae
+      link: https://www.ginniemae.gov/issuers/program_guidelines/Pages/mostrecentapms.aspx
+
+    - title: Notes &amp; News
+      agency: Ginnie Mae
+      link: https://www.ginniemae.gov/issuers/program_guidelines/Pages/notes_news.aspx
+
+    - title: All Handbooks
+      agency: United States Department of Agriculture (USDA)
+      link: https://www.rd.usda.gov/resources/directives/handbooks
+
+    - title: Form Letters
+      agency: United States Department of Agriculture (USDA)
+      link: https://www.rd.usda.gov/resources/directives/form-letters
+
+    - title: Guide Letters
+      agency: United States Department of Agriculture (USDA)
+      link: https://www.rd.usda.gov/resources/directives/guide-letters
+
+    - title: Home Loan Guaranty Buyer's Guide
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/homeloans/documents/docs/VA_Buyers_Guide.pdf
+
+    - title: Lenders Handbook - 26-7
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/warms/pam26_7.asp
+
+    - title: Servicer Handbook - M26-4
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/WARMS/M26_4.asp
+
+    - title: VALERI Servicer User Guide
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/HOMELOANS/documents/docs/servicer_user_guide.pdf
+
+    - title: Circulars
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/homeloans/resources_circulars.asp
+
+    - title: Lender Resources
+      agency: Veterans Affairs (VA)
+      link: https://benefits.va.gov/homeloans/lenders.asp
+
+    - title: VALERI Guides and Templates
+      agency: Veterans Affairs (VA)
+      link: https://www.benefits.va.gov/HOMELOANS/servicers_valeri_guides.asp
+
+federal_acts:
+  header:
+    - title: Federal Act
+      sortable: true
+
+  rows:
+    - title: Alternative Mortgage Transaction Parity Act (AMTPA) & Reg. D
+      link: 
+    - title: Americans with Disabilities Act (ADA), Title III (Public Accommodations and Services Operated by Private Entities)
+      link: 
+    - title: Bank Secrecy Act – Anti-Money Laundering (BSA AML) & Implementing Regulations (Incl. Suspicious Activity Reports)
+      link: 
+    - title: Certain High-Cost Installment Loans Regulations
+      link: 
+    - title: Children’s Online Privacy Protection Act (COPPA) & Implementing Regulations
+      link: 
+    - title: Community Reinvestment Act
+      link: 
+    - title: Consumer Leasing Act (CLA), Reg. M & Implementing Regulations
+      link: 
+    - title: Controlling the Assault of Non-Solicited Pornography and Marketing Act of 2003 (CAN-SPAM Act) & Implementing Regulations
+      link: 
+    - title: Debt Cancellation Contracts and Debt Suspension Agreements
+      link: 
+    - title: Dodd-Frank Wall Street Reform and Consumer Protection Act (Dodd-Frank Act)
+      link: 
+    - title: Electronic Funds Transfers Act (EFTA) & Reg. E
+      link: 
+    - title: Electronic Signatures in Global and National Commerce Act (ESIGN Act)
+      link: 
+    - title: Equal Credit Opportunity Act (ECOA)
+      link: 
+    - title: Fair Credit Billing Act (FCBA)
+      link: 
+    - title: Fair Credit Reporting Act (FCRA) & Reg. V
+      link: 
+    - title: Fair Debt Collection Practices Act (FDCPA) & Reg. F
+      link: 
+    - title: Fair Housing Act (FHA) & Implementing Regulations
+      link: 
+    - title: Financial Institutions Reform, Recovery, and Enforcement Act (FIRREA) Title XI – Appraisal Requirements & Implementing Regulations
+      link: 
+    - title: Gramm-Leach-Bliley Act (GLBA), Reg. P & Implementing Regulations
+      link: 
+    - title: Home Mortgage Disclosure Act (HMDA) & Reg. C
+      link: 
+    - title: Home Ownership and Equity Protection Act (HOEPA) & Reg. Z Extracts
+      link: 
+    - title: Homeowners Protection Act (HPA)
+      link: 
+    - title: Insurance Requirements (Including Mortgage Insurance)
+      link: 
+    - title: Lending Limits & Implementing Regulations
+      link: 
+    - title: Military Lending Act (MLA) & Implementing Regulations
+      link: 
+    - title: Mortgage Acts and Practices (MAP) – Advertising (Reg. N)
+      link: 
+    - title: Mortgage Assistance Relief Services (MARS) (Reg. O)
+      link: 
+    - title: Multifamily Mortgage Foreclosure Act & Implementing Regulations
+      link: 
+    - title: National Do-Not-Call Registry
+      link: 
+    - title: National Flood Insurance Act and the Flood Disaster Protection Act & Implementing Regulations
+      link: 
+    - title: National Housing Act (NHA) & Implementing Regulations
+      link: 
+    - title: Obtaining and Using Medical Information in Connection with Credit (Regulation FF)
+      link: 
+    - title: Real Estate Lending & Implementing Regulations
+      link: 
+    - title: Real Estate Settlement Procedures Act (RESPA) & Reg. X
+      link: 
+    - title: Right to Financial Privacy & Implementing Regulations
+      link: 
+    - title: Secure and Fair Enforcement Act (SAFE Act) & Reg. G, Reg. H
+      link: 
+    - title: Servicemembers Civil Relief Act (SCRA)
+      link: 
+    - title: Single Family Mortgage Foreclosure Act & Implementing Regulations
+      link: 
+    - title: Telemarketing and Consumer Fraud and Abuse Prevention Act (Telemarketing Sales Rule) & Implementing Regulations
+      link: 
+    - title: Telephone Consumer Protection Act (TCPA) & Implementing Regulations
+      link: 
+    - title: Truth in Lending Act (TILA) & Reg. Z
+      link: 
+    - title: Unfair, Deceptive, or Abusive Acts or Practices (UDAAP)
+      link: 
+
+federal_agencies:
+  header:
+    - title: Agency
+      sortable: true
+
+  rows:
+    - title: Consumer Financial Protection Bureau (CFPB)
+      link: 
+    - title: Department of Defense (DOD)
+      link: 
+    - title: Federal Communications Commission (FCC)
+      link: 
+    - title: Federal Deposit Insurance Corporation (FDIC)
+      link: 
+    - title: Federal Financial Institutions Examination Council (FFIEC)
+      link: 
+    - title: Federal Reserve Board (FRB)
+      link: 
+    - title: Federal Trade Commission (FTC)
+      link: 
+    - title: Housing and Urban Development (HUD)
+      link: 
+    - title: Office of the Comptroller of the Currency (OCC)
+      link: 
+
+reference_charts:
+  header:
+    - title: Name
+      sortable: true
+    - title: Last Updated
+      sortable: true
+
+  rows:
+    - title: California Licensing Comparison
+      date: Jan. 2023
+      link: 
+    - title: Community Property, Dower, Curtesy, Homestead and NTS
+      date: Jan. 2023
+      link: 
+    - title: DIDMCA Opt-Out States
+      date: Jan. 2023
+      link: 
+    - title: E-Notary Summary Chart
+      date: Jan. 2023
+      link: 
+    - title: Escrow and Impound Account Requirements Chart
+      date: Jan. 2023
+      link: 
+    - title: Foreclosure Reference Chart
+      date: Jan. 2023
+      link: 
+    - title: Interest on Escrow Reference Chart
+      date: Jan. 2023
+      link: 
+    - title: Mortgage or Deed Of Trust Reference Chart
+      date: Jan. 2023
+      link: 
+    - title: SOLs and Time Barred Debt Reference Chart
+      date: Jan. 2023
+      link: 
+    - title: Wet/Dry Settlement Chart
+      date: Jan. 2023
+      link: 

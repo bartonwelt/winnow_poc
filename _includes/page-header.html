@@ -1,0 +1,23 @@
+<div class="page-header d-flex align-items-xxl-center justify-content-xxl-between flex-column flex-xxl-row py-4">
+    <div class="page-title flex-grow-1">
+        <h1 class="h3 m-0" id="pageTitle">{{ include.title }}</h1>
+        {% if include.meta %}
+            {% include meta/{{include.meta}} %}
+        {% endif %}
+    </div>
+    <div class="page-menu">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end text-nowrap">
+            {% if page.menu %}
+                {% include menus/{{include.menu}} %}
+            {% endif %}
+            <span data-bs-toggle="tooltip" data-bs-title="Winnow AI">
+                <!-- <button id="magicToggle" class="btn btn-secondary active" type="button" data-bs-toggle="collapse" data-bs-target="#assistant" aria-expanded="true" aria-controls="assistant" onclick="toggleBtnClass(magicToggle, 'active')">
+                    <i class="bi bi-magic"></i>
+                </button> -->
+                <button id="magicToggle" class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#assistant" aria-controls="#assistant">
+                    <i class="bi bi-magic"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>

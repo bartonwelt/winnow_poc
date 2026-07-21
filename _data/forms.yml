@@ -1,0 +1,196 @@
+product_type:
+  - title: Auto Financing
+  - title: Banking
+  - title: Commercial Lending
+  - title: Consumer Financing
+  - title: Credit Cards
+  - title: Money Services Business
+  - title: Mortgages
+
+loan_phase:
+  - title: Marketing / Advertising
+  - title: Do I Need a License / Registration
+  - title: Obtaining and Maintaining a License / Registration
+  - title: Origination
+  - title: Servicing
+  - title: Unique to Default / Loss Mitigation
+
+subject_matter:
+  - title: Privacy & Cybersecurity
+  - title: Military / Servicemember
+  - title: Debt Collection
+  - title: everse Mortgages
+  - title: High Cost
+  - title: Higher Priced
+  - title: Notary and Electronic Documentation / Signature
+  - title: UCC
+
+jurisdiction:
+  - title: Federal
+  - title: Alabama
+  - title: Alaska
+  - title: Arizona
+  - title: Arkansas
+  - title: California
+  - title: Colorado
+  - title: Connecticut
+  - title: Delaware
+  - title: District of Columbia
+  - title: Florida
+  - title: Georgia
+  - title: Hawaii
+  - title: Idaho
+  - title: Illinois
+  - title: Indiana
+  - title: Iowa
+  - title: Kansas
+  - title: Kentucky
+  - title: Louisiana
+  - title: Maine
+  - title: Maryland
+  - title: Massachusetts
+  - title: Michigan
+  - title: Minnesota
+  - title: Mississippi
+  - title: Missouri
+  - title: Montana
+  - title: Nebraska
+  - title: Nevada
+  - title: New Hampshire
+  - title: New Jersey
+  - title: New Mexico
+  - title: New York
+  - title: North Carolina
+  - title: North Dakota
+  - title: Ohio
+  - title: Oklahoma
+  - title: Oregon
+  - title: Pennsylvania
+  - title: Rhode Island
+  - title: South Carolina
+  - title: South Dakota
+  - title: Tennessee
+  - title: Texas
+  - title: Utah
+  - title: Vermont
+  - title: Virginia
+  - title: Washington
+  - title: West Virginia
+  - title: Wisconsin
+  - title: Wyoming
+
+entity_type:
+  - title: Federal Credit Union
+  - title: Federal Thrift
+  - title: National Bank
+  - title: Non-Bank / Non-Credit Union
+  - title: State Chartered Bank
+  - title: State Chartered Credit Union
+  - title: State Chartered Thrift
+
+criteria:
+  - title: Loan Phase / Subject Matter
+  - title: Loan Category
+  - title: Jurisdiction
+  - title: Secured / Unsecured Loan
+  - title: Open / Closed End
+  - title: Fixed / Adjustable Rate
+  - title: Entity Type
+  - title: Property Type
+  - title: Occupancy Status
+  - title: Loan Purpose
+  - title: Purchase / Refinance
+  - title: Lien Position
+  - title: Loan Amount
+  - title: Loan to Value (LTV)
+  - title: 1st / 3rd Party
+  - title: Alternative / Specialty
+
+topics_table:
+  header:
+    - title: Topics
+    - title: Disclosures
+    - title: Fees
+    - title: Practice Restrictions
+    - title: Record Retention
+  rows:
+  - title: Ability to Contract
+  - title: Acceleration / Due on Sale
+  - title: Adverse Action
+  - title: Anti-Discrimination
+  - title: Anti-Tying / Tie-Ins
+  - title: Application
+  - title: Borrower Residency Status
+  - title: Borrower's Right to Cancel
+  - title: Broker
+  - title: Calculating Points, , APR
+  - title: Choice of Law
+  - title: Compensation (LO, Broker, etc.)
+  - title: Compliance With Federal Law or Agency Guidance
+  - title: Conflict of Interest - Loans to Officers / Employees
+  - title: Conflict of Interest - Obligations and Restrictions of Officers / Employees
+  - title: Conflict of Interest - Other
+  - title: Conflict of Interest – Interested Party Contributions / Inducement to Purchase
+  - title: Conflict of Interest – Kickbacks
+  - title: Contract Format Requirements
+  - title: Contract Terms
+  - title: Copy of Loan Documents
+  - title: Cosigner, Co-Borrowers, and Guarantors
+  - title: Credit Report / Reporting and Security Freeze
+  - title: Creditor / Lessor’s Right to Cancel
+  - title: DIDMCA
+  - title: Disbursement of Loan Funds
+  - title: Events of Default
+  - title: Fee - Administration 
+  - title: Fee - Advance / Upfront 
+  - title: Fee - Annual 
+  - title: Fee - As Agreed
+  - title: Fee - Attorneys' 
+  - title: Fee - Doc Prep 
+  - title: Fee - Fax 
+  - title: Fee - NSF / Return Check 
+  - title: Fee - Only Enumerated
+  - title: Fee - Origination 
+  - title: Fee - Permissible 
+  - title: Fee - Postage, Mailing, Overnight 
+  - title: Fee - Processing 
+  - title: Fee - Prohibited 
+  - title: Fee - Referral 
+  - title: Fee - Surcharge / Convenience 
+  - title: Fee - Wire 
+  - title: Finance Charges / Interest (Calculation, Limits, Included )
+  - title: Financing Points and 
+  - title: GAP - 2 Party
+  - title: Identity Theft and Fraud
+  - title: Insurance - Credit, Life, Accident, or Health
+  - title: Insurance - Force Placed
+  - title: Insurance - Hazard / Property
+  - title: Interest Collection (Rules and Restrictions)
+  - title: Limited English Proficiency
+  - title: Loan Flipping, Equity Stripping, Recommending Breach
+  - title: Loan Terms
+  - title: Loan to Value Limits / Restrictions
+  - title: Marriage, Civil Union, Domestic Partnership
+  - title: Origination File
+  - title: Payment
+  - title: Payment (Options)
+  - title: Plain Language
+  - title: Post-Application 
+  - title: Power of Attorney / Borrower Authorizations
+  - title: Pre-Application 
+  - title: Prepayment
+  - title: Prior To / At Consummation 
+  - title: Property Exemptions (Other than Homestead)
+  - title: Rate Lock and Commitments
+  - title: Recording
+  - title: Refinance, Consolidation, Renewal, Roll-over, and Multiple Loans
+  - title: Refund of  and Charges
+  - title: Security / Security Instrument
+  - title: Settlement Statement
+  - title: State Loan Registration
+  - title: UDAP
+  - title: Unauthorized Practice of Law
+  - title: Underwriting
+  - title: Usury and Interest Rate Limitations
+  - title: Warranties
+  - title: Wild Card Provisions (Interest Rate Exportation / Most Favored Lender

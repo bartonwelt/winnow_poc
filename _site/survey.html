@@ -1,0 +1,1505 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Winnow POC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="bg-light sidebar-right">
+  <div class="wrapper">
+    <div id="sidebar" class="app-sidebar">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div id="main_nav">
+                <div id="brand" class="mb-3">
+                    <a href="/" class="navbar-brand">
+                        <img src="/assets/images/winnow-icon.svg" style="width: 3.5rem;" />
+                    </a>
+                </div>
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/" class="btn btn-light text-start " >
+                            <i class="bi bi-house"></i>
+                            
+                                Home
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/favorite-surveys.html" class="btn btn-light text-start " >
+                            <i class="bi bi-star"></i>
+                            
+                                Favorites
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/agency-guides.html" class="btn btn-light text-start " >
+                            <i class="bi bi-book"></i>
+                            
+                                Resources
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/search-new.html" class="btn btn-light text-start " >
+                            <i class="bi bi-binoculars"></i>
+                            
+                                Search
+                            
+                        </a>
+                        
+                    
+                        
+                        <a href="/survey-new.html" class="btn btn-light text-start " >
+                            <i class="bi bi-journal-bookmark"></i>
+                            
+                                New Survey
+                            
+                        </a>
+                        
+                    
+                </div>
+            </div>
+            <div id="secondary_nav" class="border-top pt-2">
+                <div class="d-grid gap-2">
+                    
+                        
+                        <a href="/settings.html" class="btn btn-light text-start " id="nav-settings" >
+                            <i class="bi bi-gear"></i>
+                            Settings
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law/help/" class="btn btn-light text-start " id="nav-help" target='_blank'>
+                            <i class="bi bi-question-circle"></i>
+                            Help
+                        </a>
+                        
+                    
+                        
+                        <a href="#" class="btn btn-light text-start " id="nav-legal" data-bs-toggle='modal' data-bs-target='#legalModal'>
+                            <i class="bi bi-c-circle"></i>
+                            Legal
+                        </a>
+                        
+                    
+                        
+                        <a href="https://www.winnow.law" class="btn btn-light text-start " id="nav-sign-out" >
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sign Out
+                        </a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <main class="d-flex flex-column flex-grow-1 justify-content-between bg-white rounded shadow-sm">
+      <div class="container-fluid d-flex flex-column flex-grow-1 px-2 pb-2 px-lg-4 pb-lg-2">
+        <div class="row page-header-wrapper sticky-top bg-white">
+          <div class="col-12">
+            <div class="page-header d-flex align-items-xxl-center justify-content-xxl-between flex-column flex-xxl-row py-4">
+    <div class="page-title flex-grow-1">
+        <h1 class="h3 m-0" id="pageTitle">My Survey</h1>
+        
+    </div>
+    <div class="page-menu">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end text-nowrap">
+            
+                
+    <a href="" class="btn btn-primary">Save</a>
+    <a href="/survey-new.html" class="btn btn-secondary">Edit</a>
+    <span data-bs-toggle="tooltip" data-bs-title="Options">
+      <div class="dropdown">
+        <button class="btn btn-secondary" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-three-dots"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenu">
+          <li><button class="dropdown-item" type="button">Export</button></li>
+          <li class="dropdown-divider"></li>
+          <li><h6 class="dropdown-header">Survey Layout</h6></li>
+          <li><button class="dropdown-item" type="button">Table Layout</button></li>
+          <li><button class="dropdown-item" type="button">List Layout</button></li>
+          <li class="dropdown-divider"></li>
+          <li><button class="dropdown-item" type="button">Survey Details</button></li>
+          <li><button class="dropdown-item" type="button">Show Hints</button></li>
+        </ul>
+      </div>
+    </span>
+
+            
+            <span data-bs-toggle="tooltip" data-bs-title="Winnow AI">
+                <!-- <button id="magicToggle" class="btn btn-secondary active" type="button" data-bs-toggle="collapse" data-bs-target="#assistant" aria-expanded="true" aria-controls="assistant" onclick="toggleBtnClass(magicToggle, 'active')">
+                    <i class="bi bi-magic"></i>
+                </button> -->
+                <button id="magicToggle" class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#assistant" aria-controls="#assistant">
+                    <i class="bi bi-magic"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+        
+            <div class="card mb-3">
+    <div class="card-body d-flex align-items-center justify-content-between">
+        <ul class="list-unstyled list-inline m-0">
+            <li class="list-inline-item">
+                <strong>100</strong> Results
+            </li>
+        </ul>
+        <form class="row row-cols-lg-auto g-2 align-items-center">
+            <div class="col-12">
+                <div class="input-group">
+                    <span class="input-group-text" id="orderByAddon">Order By:</span>
+                    <label for="resultsOrder" class="visually-hidden">Order By:</label>
+                    <select class="form-select" id="resultsOrder" aria-label="Order By" aria-described-by="orderByAddon">
+                        <option selected="">Jurisdiction</option>
+                        <option value="1">Topic</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-12 input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-secondary" type="submit">
+                    <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+        <div class="card mb-3" id="survey_result_1">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #1</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult1" aria-expanded="false" aria-controls="collapseResult1" onclick="toggleBtnClass(resultToggle1, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle1"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult1">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_2">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #2</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult2" aria-expanded="false" aria-controls="collapseResult2" onclick="toggleBtnClass(resultToggle2, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle2"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult2">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_3">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #3</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult3" aria-expanded="false" aria-controls="collapseResult3" onclick="toggleBtnClass(resultToggle3, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle3"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult3">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_4">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #4</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult4" aria-expanded="false" aria-controls="collapseResult4" onclick="toggleBtnClass(resultToggle4, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle4"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult4">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_5">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #5</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult5" aria-expanded="false" aria-controls="collapseResult5" onclick="toggleBtnClass(resultToggle5, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle5"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult5">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_6">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #6</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult6" aria-expanded="false" aria-controls="collapseResult6" onclick="toggleBtnClass(resultToggle6, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle6"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult6">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_7">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #7</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult7" aria-expanded="false" aria-controls="collapseResult7" onclick="toggleBtnClass(resultToggle7, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle7"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult7">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_8">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #8</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult8" aria-expanded="false" aria-controls="collapseResult8" onclick="toggleBtnClass(resultToggle8, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle8"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult8">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_9">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #9</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult9" aria-expanded="false" aria-controls="collapseResult9" onclick="toggleBtnClass(resultToggle9, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle9"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult9">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+        <div class="card mb-3" id="survey_result_10">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="/requirement.html">Result - #10</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult10" aria-expanded="false" aria-controls="collapseResult10" onclick="toggleBtnClass(resultToggle10, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle10"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult10">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="/citation.html">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="/citation.html">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="/citation.html">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product &amp; Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="">
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 1</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 2</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 3</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 4</a>
+                </span>
+                
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="/defined-term.html">Term 5</a>
+                </span>
+                
+            </p>
+            
+            <label class="form-label">Topic &amp; Category Applicability</label>
+            <p>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                
+            </p>
+            
+        </div>
+    </div>
+</div>
+    
+</div>
+
+        
+          </div>
+        </div>
+        
+      </div>
+      <div class="sticky-bottom">
+    <div class="p-3 m-2 bg-light border rounded text-end shadow-sm">
+        <div class="d-flex align-items-center justify-content-between">
+    <ul class="list-unstyled list-inline m-0">
+        <li class="list-inline-item">
+            Viewing <strong>1-50</strong> of 100
+        </li>
+    </ul>
+    <button class="btn btn-secondary" role="button">Load More</button>
+</div>
+    </div>
+</div>
+    </main>
+    <div id="sidebar_subnav" class="app-sidebar app-sidebar-subnav">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div class="border-bottom mb-3">
+                <div class="sidebar-section-header mb-3">
+    <label class="form-label">Default Criteria</label>
+    
+    <a href="#" class="small">Disable</a>
+    
+</div>
+                <div class="mb-3">
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 1
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 2
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 3
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 4
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-secondary mb-1">
+                        Criteria 5
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="border-bottom mb-3">
+                <div class="sidebar-section-header mb-3">
+    <label class="form-label">Added Criteria</label>
+    
+    <a href="#" class="small">Clear All (#)</a>
+    
+</div>
+                <div class="mb-3">
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 1
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 2
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 3
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 4
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                    <a class="btn btn-sm btn-outline-primary mb-1">
+                        Criteria 5
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="border-bottom mb-3">
+                <div class="sidebar-section-header mb-3">
+    <label class="form-label">Available Criteria</label>
+    
+    <a href="#" class="small">Toggle All</a>
+    
+</div>
+                <div class="d-grid gap-2 mb-3">
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Loan Phase / Subject Matter
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Loan Category
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Jurisdiction
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Secured / Unsecured Loan
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Open / Closed End
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Fixed / Adjustable Rate
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Entity Type
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Property Type
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Occupancy Status
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Loan Purpose
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Purchase / Refinance
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Lien Position
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Loan Amount
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Loan to Value (LTV)
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        1st / 3rd Party
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                    <a href="#" class="btn btn-light text-start">
+                        Alternative / Specialty
+                        <i class="bi bi-chevron-left float-end"></i>
+                    </a>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    
+      <div id="assistant" class="app-sidebar offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" aria-labelledby="assistant">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div><!-- aligned top -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">
+                        <i class="bi bi-magic text-primary"></i> Winnow AI
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Ask a question. Winnow AI will provide an answer from our comprensive database of state and federal requirements.</p>
+                    <p>Here are some sample questions to get your started:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#">What percent interest rate can I charge for a short-term loan?</a></li>
+                        <li class="mb-3"><a href="#">After I receive a demand from a debtor, can I wait 30 days to release them from their obligation?</a></li>
+                        <li><a href="#">How many locations can I operate under a license?</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-3 border-top"><!-- aligned bottom -->
+                <form>
+                    <div class="d-flex justify-content-between mb-2">
+                        <div class="d-flex">
+                            <div class="btn-group dropup me-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Jurisdiction">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-globe-americas"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Federal</a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Alabama</a></li>
+                                    <li><a class="dropdown-item" href="#">Alaska</a></li>
+                                    <li><a class="dropdown-item" href="#">Arizona</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Product Type">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-credit-card"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Auto Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Direct</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - RISC</a></li>
+                                    <li><a class="dropdown-item" href="#">Auto Loans - Leases</a></li>
+                                    <li><a class="dropdown-item" href="#">...</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <button id="federalBtn" class="btn btn-outline-secondary me-2" type="button" data-bs-toggle="tooltip" data-bs-title="Inlude Federal" onclick="toggleBtnClass(federalBtn, 'active')">
+                                <i class="bi bi-bank2"></i>
+                            </button>
+                            <div class="btn-group dropup" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Response Length">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Shorter</a></li>
+                                    <li><a class="dropdown-item active" href="#">Normal</a></li>
+                                    <li><a class="dropdown-item" href="#">Longer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Ask a Question" id="aiSidebarQuery" style="height: 6rem;"></textarea>
+                        <label for="aiSidebarQuery" class="form-label">Ask a Question</label>
+                        <div class="form-text text-end">
+                            <i class="bi bi-arrow-return-right"></i> Hit return to submit
+                        </div>
+                    </div>
+                    <div class="form-text text-center small mt-2">
+                        Disclaimer: Winnow AI may produce answers that contain inaccurate or incomplete information.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+  <div class="modal modal-lg fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="legalModalLabel">Legal Info</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <small class="text-muted">
+          &copy; 2025 Winnow Solutions, LLC. Winnow® is a service mark of Winnow Solutions, LLC. Orrick® and the Orrick logo designs are service marks of Orrick Herrington & Sutcliffe LLP and are used with permission from Orrick Herrington & Sutcliffe LLP. IMPORTANT: Winnow is a software product offered by Winnow Solutions, LLC, which is not engaged in the practice of law. Winnow is not legal advice or a substitute for legal advice from a licensed attorney. The purchase or use of Winnow does not establish an attorney-client relationship with Winnow Solutions, LLC or Orrick Herrington & Sutcliffe LLP.
+          <ul class="list-inline list-unstyled mt-4">
+              <li class="list-inline-item"><a href="https://www.winnow.law/terms-of-use">Terms of Use</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/privacy-policy">Privacy &amp; Cookie Policy</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/disclaimers">Disclaimers</a></li>
+              <li class="list-inline-item"><a href="https://www.winnow.law/help">Help</a></li>
+              <li class="list-inline-item"><a href="mailto:support@winnow.law">Contact Us</a></li>
+          </ul>
+        </small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

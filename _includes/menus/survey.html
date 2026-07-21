@@ -1,0 +1,33 @@
+{% case page.url %}
+  {% when site.data.navigation.new_survey.link %}
+    <span data-bs-toggle="tooltip" data-bs-title="Options">
+      <div class="dropdown">
+        <button class="btn btn-secondary" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-three-dots"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenu">
+          <li><button class="dropdown-item" type="button">Show Hints</button></li>
+        </ul>
+      </div>
+    </span>
+    {% when site.data.navigation.survey.link %}
+    <a href="" class="btn btn-primary">Save</a>
+    <a href="{{ site.data.navigation.new_survey.link}}" class="btn btn-secondary">Edit</a>
+    <span data-bs-toggle="tooltip" data-bs-title="Options">
+      <div class="dropdown">
+        <button class="btn btn-secondary" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-three-dots"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenu">
+          <li><button class="dropdown-item" type="button">Export</button></li>
+          <li class="dropdown-divider"></li>
+          <li><h6 class="dropdown-header">Survey Layout</h6></li>
+          <li><button class="dropdown-item" type="button">Table Layout</button></li>
+          <li><button class="dropdown-item" type="button">List Layout</button></li>
+          <li class="dropdown-divider"></li>
+          <li><button class="dropdown-item" type="button">Survey Details</button></li>
+          <li><button class="dropdown-item" type="button">Show Hints</button></li>
+        </ul>
+      </div>
+    </span>
+{% endcase %}

@@ -1,0 +1,62 @@
+{% if include.dataset and include.content %}
+  {% assign table_content = site.data[include.dataset][include.content] %}
+{% else %}
+  {% assign table_content = site.data.activity.surveys %}
+{% endif %}
+
+<div class="d-table table-hover w-100 {% if include.type %}table-{{ include.type }}{% endif %}">
+  <div class="d-table-row table-header sticky-top" style="top: var(--navbar-height);">
+    {% for header in table_content.header %}
+      <div class="d-table-cell align-middle p-3 {% if forloop.last and include.actions %}text-end{% endif %} {% if header.sortable %}sortable{% endif %}">
+          <label class="form-check-label form-label" for="header_check_{{forloop.index}}">
+            {% if header.sortable %}<a href="" class="d-flex align-items-center">{% endif %}
+              {{ header.title }}
+              {% if forloop.first and header.sortable %}<i class="bi bi-arrow-up-short fs-5"></i>{% endif %}
+            {% if header.sortable %}</a>{% endif %}
+          </label>
+      </div>
+    {% endfor %}
+  </div>
+  {% for row in table_content.rows %}
+    <div class="d-table-row position-relative">
+      {% case include.content %}
+        {% when 'agency_guides' %}
+          <div class="d-table-cell align-middle p-3">
+            <a href="{{ row.link }}" class="stretched-link" target="_blank">{{ row.title }}</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">{{ row.agency }}</div>
+        {% when 'federal' %}
+          <div class="d-table-cell align-middle p-3">
+            <a href="{{ row.link }}" class="stretched-link" target="_blank">{{ row.title }}</a>
+          </div>
+        {% when 'users' %}
+          <div class="d-table-cell align-middle p-3">
+            <a href="{{ site.data.navigation.settings_user.link}}?title={{ row.name.first_name }} {{ row.name.last_name }}" class="stretched-link">{{ row.name.first_name }} {{ row.name.last_name }}</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">{{ row.job_title }}</div>
+          <div class="d-table-cell align-middle p-3">{{ row.role }}</div>
+          <div class="d-table-cell align-middle p-3">{{ row.status }}</div>
+        {% else %}
+          <div class="d-table-cell align-middle p-3">
+            <a href="{{ row.link }}" class="stretched-link">{{ row.title }}</a>
+          </div>
+          <div class="d-table-cell align-middle p-3">{{ row.date }}</div>
+      {% endcase %}
+      {% if include.actions %}
+        <div class="d-table-cell align-middle p-3 text-end">
+          <div class="dropdown" style="z-index: 1;">
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Rename</a></li>
+              <li><a class="dropdown-item" href="#">Duplicate</a></li>
+              <li class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

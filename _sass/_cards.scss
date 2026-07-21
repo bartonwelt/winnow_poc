@@ -1,0 +1,12 @@
+:root {
+    --card-cap-padding-y: 0.75rem; // replace with bootstrap var
+}
+
+.card-header {
+    padding-bottom: var(--card-cap-padding-y);
+    padding-top: var(--card-cap-padding-y);
+
+    .card-header-tabs {
+        margin-bottom: calc(-1 * var(--card-cap-padding-y));
+    }
+}

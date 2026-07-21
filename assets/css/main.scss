@@ -1,0 +1,36 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "badges";
+@import "cards";
+@import "forms";
+@import "layout";
+@import "tables";
+@import "type";
+
+:root {
+    --navbar-height: 5.375rem;
+    --sidebar-assistant-width: 40vw;
+    --sidebar-width: 16rem;
+    --sidebar-subnav-width: 20rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh !important;
+
+    &.scrolling {
+        .page-header-wrapper {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.176);
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}

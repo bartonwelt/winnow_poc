@@ -1,0 +1,117 @@
+main {
+    margin: 0.75rem;
+}
+
+// sidebars
+@mixin sidebar-size($width) {
+    &.app-sidebar,
+    &.app-sidebar .sidebar-content {
+        flex: 1 0 $width;
+        max-width: $width;
+        width: $width;
+    }
+
+    .sticky-top {
+        flex: 100vh 0 $width;
+        width: $width;
+    }
+}
+
+.app-sidebar,
+.sidebar-content,
+.sidebar-content > .sticky-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-sidebar {
+    min-width: var(--sidebar-width);
+
+    .btn-light i.bi {
+        margin-right: 0.25rem;
+    }
+
+    .d-grid > .d-grid {
+        .btn {
+            padding-left: 2.25rem;
+        }
+    }
+
+    .sidebar-content {
+        .sidebar-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                margin: 0;
+            }
+        }
+
+        .sticky-top {
+            height: 100vh;
+            justify-content: space-between;
+            overflow-y: auto;
+            scroll-margin-left: 1rem;
+        }
+    }
+}
+
+#sidebar {
+    @include sidebar-size(var(--sidebar-width));
+
+    .sticky-top {
+        padding: 0.75rem 0 0.75rem 0.75rem;
+    }
+}
+
+#sidebar_subnav {
+    @include sidebar-size(var(--sidebar-subnav-width));
+
+    .sticky-top {
+        justify-content: flex-start;
+    }
+}
+
+#assistant {
+    @include sidebar-size(var(--sidebar-assistant-width));
+
+    .sticky-top {
+        padding: 1.5rem 1.5rem 0.75rem 0.75rem;
+    }
+}
+
+// sidebar location
+
+body.sidebar-left {
+    #sidebar_subnav {
+        margin-left: 0.75rem;
+        
+        .sticky-top {
+            border-left: 1px solid var(--bs-border-color);
+            padding: 2.25rem 0 0.75rem 0.75rem;
+        }
+    }
+}
+
+body.sidebar-right {
+    #sidebar_subnav {
+        .sticky-top {
+            border-right: 1px solid var(--bs-border-color);
+            padding: 0.75rem 0.75rem 0.75rem 0;
+            padding-top: 2.25rem;
+        }
+    }
+
+    #assistant {
+        .sticky-top {
+            padding-left: 1.5rem;
+        }
+    }
+}
+
+// page header
+
+.page-header-wrapper {
+    z-index: 1021; // .sticky-top z-index + 1
+}

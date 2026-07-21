@@ -1,0 +1,79 @@
+<form>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="" data-bs-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="true" aria-controls="collapseCompany">
+                        Company Details
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    Information related to your company.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseCompany" aria-expanded="false" aria-controls="collapseCompany" onclick="toggleBtnClass(companyToggle, 'bi-chevron-left', 'bi-chevron-down')">
+                <i class="bi bi-chevron-down" id="companyToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse show" id="collapseCompany">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="companyName" class="form-label" required>Company Name</label>
+                    <input type="text" class="form-control" id="companyName" value="ABC Company">
+                    <div class="form-text">
+                        Changing the company name won't change the name used in the URL address bar.
+                    </div>
+                </div>
+                <div>
+                    <a href="" role="button" class="btn btn-primary">Save Changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border rounded p-4 mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h2 class="h5">
+                    <a href="" data-bs-toggle="collapse" href="#collapseCriteria" role="button" aria-expanded="true" aria-controls="collapseCriteria">
+                        Default Criteria
+                    </a>
+                </h2>
+                <small class="text-muted">
+                    Set default values that appear when building surveys.
+                </small>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseCriteria" aria-expanded="false" aria-controls="collapseCriteria" onclick="toggleBtnClass(passwordToggle, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="passwordToggle"></i>
+            </button>
+        </div>
+        <div class="row collapse" id="collapseCriteria">
+            <div class="col-12 col-xxl-6 pt-4">
+                <div class="mb-4">
+                    <label for="jurisdiction" class="form-label" required>Jurisdiction</label>
+                    <select class="form-select" id="jurisdiction">
+                        <option selected>Select One</option>
+                        {% for jurisdiction in site.data.forms.jurisdiction %}
+                            <option value="jurisdiction{{ forloop.index }}">{{ jurisdiction.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="entityType" class="form-label" required>Entity Type</label>
+                    <select class="form-select" id="entityType">
+                        <option selected>Select One</option>
+                        {% for entity_type in site.data.forms.entity_type %}
+                            <option value="entity_type{{ forloop.index }}">{{ entity_type.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="licenses" class="form-label" required>Applicable Licenses</label>
+                    <select class="form-select" id="licenses">
+                        <option selected>Select One</option>
+                    </select>
+                </div>
+                <a href="" role="button" class="btn btn-primary">Save Changes</a>
+            </div>
+        </div>
+    </div>
+</form>

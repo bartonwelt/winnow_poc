@@ -1,0 +1,76 @@
+<div class="card mb-3" id="survey_result_{{ include.index }}">
+    <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h5 class="m-0"><a href="{{ site.data.navigation.requirement.link }}">Result - #{{ include.index }}</a></h5>
+                <ul class="list-inline small mb-0 mt-1">
+                    <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><i class="bi bi-paperclip me-1"></i><a href="#">1 Attachment</a></li>
+                    <li class="list-inline-item text-muted">&bull;</li>
+                    <li class="list-inline-item text-muted"><a href="#">Version ID: #123</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult{{ include.index }}" aria-expanded="false" aria-controls="collapseResult{{ include.index }}" onclick="toggleBtnClass(resultToggle{{ include.index }}, 'bi-chevron-down', 'bi-chevron-left')">
+                <i class="bi bi-chevron-left" id="resultToggle{{ include.index }}"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="collapse" id="collapseResult{{ include.index }}">
+            <label class="form-label">Trigger</label>
+            <p>
+                When a person or other entity's business includes engaging in residential real estate related transactions. <a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Requirement Text</label>
+            <p>
+                A person or entity must not discriminate against any person in making available a residential real estate related transaction, or in the terms or conditions of the transaction, because of race, color, religion, sex, handicap, familial status, or national origin. <a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-6(a)</a>.
+            </p>
+            <label class="form-label">Additional Considerations</label>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The private individual owner does not own more than 3 single-family houses at any one time;</li>
+                <li>In the sale of any single-family house by a private individual owner not residing in the house at the time of the sale or who was not the most recent resident of the house before the sale, this exemption will apply only with respect to one sale within a 24-month period; and</li>
+                <li>A bona fide private individual owner does not own an interest in, nor is there owned or reserved on the owner's behalf, under any express or voluntary agreement, title to or a right to all or a portion of the proceeds from the sale or rental of more than 3 single-family houses at any one time.</li>
+            </ul>
+            <p><a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-7(b)</a>.</p>
+            <p>This provision does not apply to any single-family house sold or rented by an owner when:</p>
+            <ul>
+                <li>The use in any manner of the sales or rental facilities or the sales or rental services of a real estate broker, agent, or salesperson, or of the facilities or services of a person in the business of selling or renting dwellings, or of an employee or agent of a broker, agent, salesperson, or person; and</li>
+                <li>The publication, posting, or mailing, after notice, of an advertisement or written notice in violation of <a href="{{ site.data.navigation.citation.link }}">Code § 24-8-1</a> to -15 [the Fair Housing Law].</li>
+            </ul>
+            <p><a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This exemption does not prohibit the use of attorneys, escrow agents, abstractors, title companies, and other professional assistance as necessary to perfect or transfer title. <a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-7(c)</a>.</p>
+            <p>This provision does not apply to rooms or units in dwellings containing living quarters occupied or intended to be occupied by no more than 4 families living independently of each other, if the owner actually maintains and occupies 1 of the living quarters as his or her residence. <a href="{{ site.data.navigation.citation.link }}">Ala. Code § 24-8-7(a)</a>.</p>
+            <label class="form-label">Product & Loan Details</label>
+            <p>
+                <span class="badge text-bg-light border mb-1">Product Type: <span class="fw-normal">Mortgages</span></span>
+                <span class="badge text-bg-light border mb-1">Open / Closed: <span class="fw-normal">Closed End, Open End</span></span>
+                <span class="badge text-bg-light border mb-1">Fixed / Adjustable: <span class="fw-normal">Adjustable, Fixed</span></span>
+                <span class="badge text-bg-light border mb-1">Property Type: <span class="fw-normal">Condo, Single Family</span></span>
+                <span class="badge text-bg-light border mb-1">Max # of Properties: <span class="fw-normal">Up to 6 Properties, Multi-Family</span></span>
+                <span class="badge text-bg-light border mb-1">Occupancy: <span class="fw-normal">Primary or Secondary, Non-Owner Occupied</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Purpose: <span class="fw-normal">Consumer</span></span>
+                <span class="badge text-bg-light border mb-1">Finance Purpose: <span class="fw-normal">Purchase, Refinance</span></span>
+                <span class="badge text-bg-light border mb-1">Lien Position: <span class="fw-normal">First, Junior</span></span>
+                <span class="badge text-bg-light border mb-1">Loan Amount: <span class="fw-normal">N/A</span></span>
+            </p>
+            <label class="form-label">Defined Terms</label>
+            <p class="{% if include.search %}m-0{% endif %}">
+                {% for i in (1..5) %}
+                <span class="badge text-bg-light border fw-normal mb-1">
+                    <a href="{{ site.data.navigation.defined_term.link }}">Term {{ i }}</a>
+                </span>
+                {% endfor %}
+            </p>
+            {% unless include.search %}
+            <label class="form-label">Topic & Category Applicability</label>
+            <p>
+                {% for i in (1..5) %}
+                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                {% endfor %}
+            </p>
+            {% endunless %}
+        </div>
+    </div>
+</div>

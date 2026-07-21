@@ -1,0 +1,57 @@
+<div id="sidebar" class="app-sidebar">
+    <div class="sidebar-content">
+        <div class="sticky-top">
+            <div id="main_nav">
+                <div id="brand" class="mb-3">
+                    <a href="{{ site.data.navigation.home.link}}" class="navbar-brand">
+                        <img src="/assets/images/winnow-icon.svg" style="width: 3.5rem;" />
+                    </a>
+                </div>
+                <div class="d-grid gap-2">
+                    {% for item in site.data.navigation.main_nav %}
+                        {% assign nav_item = site.data.navigation[item.link] %}
+                        <a href="{{ nav_item.link }}" class="btn btn-light text-start {% unless item.children %}{% if page.url == nav_item.link %}active{% endif %}{% endunless %}" {% if item.attrs %}target="{{ item.attrs }}"{% endif %}>
+                            <i class="bi bi-{{ nav_item.icon }}{% if page.url == nav_item.link %}-fill{% endif %}"></i>
+                            {% if nav_item.nav_title %}
+                                {{ nav_item.nav_title }}
+                            {% else %}
+                                {{ nav_item.title }}
+                            {% endif %}
+                        </a>
+                        {% if item.children and (page.menu_parent == nav_item.title) %}
+                            <div class="d-grid gap-2">
+                                {% for child in item.children %}
+                                    {% assign nav_child = site.data.navigation[child.link] %}
+                                    <a href="{{ nav_child.link }}" class="btn btn-light text-start {% if page.url == nav_child.link %}active{% endif %}" {% if item.attrs %}target="{{ item.attrs }}"{% endif %}>
+                                        {{ nav_child.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="secondary_nav" class="border-top pt-2">
+                <div class="d-grid gap-2">
+                    {% for item in site.data.navigation.secondary_nav %}
+                        {% assign nav_item = site.data.navigation[item.link] %}
+                        <a href="{{ nav_item.link }}" class="btn btn-light text-start {% unless item.children %}{% if page.url == nav_item.link %}active{% endif %}{% endunless %}" id="nav-{{ nav_item.title | slugify }}" {% if item.attrs %}{{ item.attrs }}{% endif %}>
+                            <i class="bi bi-{{ nav_item.icon }}{% if page.url == nav_item.link %}-fill{% endif %}"></i>
+                            {{ nav_item.title }}
+                        </a>
+                        {% if item.children and (page.menu_parent == nav_item.title) %}
+                            <div class="d-grid gap-2">
+                                {% for child in item.children %}
+                                    {% assign nav_child = site.data.navigation[child.link] %}
+                                    <a href="{{ nav_child.link }}" class="btn btn-light text-start {% if page.url == nav_child.link %}active{% endif %}" {% if item.attrs %}target="{{ item.attrs }}"{% endif %}>
+                                        {{ nav_child.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
