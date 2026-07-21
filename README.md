@@ -1,2 +1,2 @@
-# winnow-app-prototype
-Winnow app redesign functional prototype.
+# Winnow App Prototype
+A product redesign exploration of the core Winnow app.
