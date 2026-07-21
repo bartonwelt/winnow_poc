@@ -22,8 +22,8 @@ title: Winnow POC
 email: bart@winnow.law
 description: >- # this means to ignore newlines until "baseurl:"
   Winnow app redesign proof of concept.
-baseurl: "winnow_poc/" # the subpath of your site, e.g. /blog
-url: "https://bartonwelt.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/winnow_poc" # the subpath of your site, e.g. /blog
+url: "https://bartonwelt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 sass:
