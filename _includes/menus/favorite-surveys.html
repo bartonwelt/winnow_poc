@@ -1,10 +1,10 @@
 {% case page.url %}
   {% when site.data.navigation.favorites_standard.link %}
-  <a href="{{ site.data.navigation.new_survey.link}}" class="btn btn-primary">{{ site.data.navigation.new_survey.title}}</a>
+  <a href="{{ site.data.navigation.new_survey.link | relative_url }}" class="btn btn-primary">{{ site.data.navigation.new_survey.title}}</a>
   {% when site.data.navigation.favorites_historical.link %}
-  <a href="{{ site.data.navigation.new_survey.link}}" class="btn btn-primary">{{ site.data.navigation.new_survey.title}}</a>
+  <a href="{{ site.data.navigation.new_survey.link | relative_url }}" class="btn btn-primary">{{ site.data.navigation.new_survey.title}}</a>
   {% when site.data.navigation.favorites_searches.link %}
-  <a href="{{ site.data.navigation.new_search.link}}" class="btn btn-primary">{{ site.data.navigation.new_search.title}}</a>
+  <a href="{{ site.data.navigation.new_search.link | relative_url }}" class="btn btn-primary">{{ site.data.navigation.new_search.title}}</a>
   {% when site.data.navigation.favorites_requirements.link %}
   <!-- <a href="{{ site.data.navigation.new_survey.link}}" class="btn btn-primary">{{ site.data.navigation.new_survey.title}}</a> -->
 {% endcase %}

@@ -22,23 +22,23 @@
       {% case include.content %}
         {% when 'agency_guides' %}
           <div class="d-table-cell align-middle p-3">
-            <a href="{{ row.link }}" class="stretched-link" target="_blank">{{ row.title }}</a>
+            <a href="{{ row.link | relative_url }}" class="stretched-link" target="_blank">{{ row.title }}</a>
           </div>
           <div class="d-table-cell align-middle p-3">{{ row.agency }}</div>
         {% when 'federal' %}
           <div class="d-table-cell align-middle p-3">
-            <a href="{{ row.link }}" class="stretched-link" target="_blank">{{ row.title }}</a>
+            <a href="{{ row.link | relative_url }}" class="stretched-link" target="_blank">{{ row.title }}</a>
           </div>
         {% when 'users' %}
           <div class="d-table-cell align-middle p-3">
-            <a href="{{ site.data.navigation.settings_user.link}}?title={{ row.name.first_name }} {{ row.name.last_name }}" class="stretched-link">{{ row.name.first_name }} {{ row.name.last_name }}</a>
+            <a href="{{ site.data.navigation.settings_user.link | relative_url }}?title={{ row.name.first_name }} {{ row.name.last_name }}" class="stretched-link">{{ row.name.first_name }} {{ row.name.last_name }}</a>
           </div>
           <div class="d-table-cell align-middle p-3">{{ row.job_title }}</div>
           <div class="d-table-cell align-middle p-3">{{ row.role }}</div>
           <div class="d-table-cell align-middle p-3">{{ row.status }}</div>
         {% else %}
           <div class="d-table-cell align-middle p-3">
-            <a href="{{ row.link }}" class="stretched-link">{{ row.title }}</a>
+            <a href="{{ row.link | relative_url }}" class="stretched-link">{{ row.title }}</a>
           </div>
           <div class="d-table-cell align-middle p-3">{{ row.date }}</div>
       {% endcase %}
