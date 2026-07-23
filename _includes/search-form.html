@@ -19,7 +19,7 @@
             <div class="col-12 col-xxl-6 pt-4">
                 <div class="mb-4">
                     <label for="searchTerm" class="form-label" required>Search Term</label>
-                    <input type="text" class="form-control" id="searchTerm" placeholder="Keywords, citation number, etc." onblur="passButtonParams(this.id, searchButton, '{{ site.data.navigation.search.link }}')">
+                    <input type="text" class="form-control" id="searchTerm" placeholder="Keywords, citation number, etc." onblur="passButtonParams(this.id, searchButton, '{{ site.data.navigation.search.link | relative_url }}')">
                 </div>
                 <div class="">
                     <label for="productType" class="form-label" required>Product Type</label>

@@ -14,7 +14,7 @@ menu: dashboard.html
             <div class="card-header">
                 <div class="d-flex align-items-center justify-content-between fw-bold mb-2">
                     Recently Saved
-                    <a href="{{ site.data.navigation.favorites.link }}" class="btn btn-outline-secondary ms-auto">View All</a>
+                    <a href="{{ site.data.navigation.favorites.link | relative_url }}" class="btn btn-outline-secondary ms-auto">View All</a>
                 </div>
                 <ul class="nav nav-tabs card-header-tabs" id="activityTab" role="tablist">
                     <li class="nav-item" role="presentation">
