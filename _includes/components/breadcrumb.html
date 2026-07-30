@@ -2,7 +2,7 @@
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     {% for breadcrumb in breadcrumb_links %}
-    <li class="breadcrumb-item"><a href="{{ site.data.navigation[breadcrumb]link }}">{{ site.data.navigation[breadcrumb]title }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ site.data.navigation[breadcrumb]link | relative_url }}">{{ site.data.navigation[breadcrumb]title }}</a></li>
     {% endfor %}
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
