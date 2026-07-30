@@ -4,10 +4,10 @@
             <div class="border-bottom mb-3">
                 {% include sidebars/sidebar-section-header.html title="Default Criteria" link="Disable" %}
                 <div class="mb-3">
-                    {% for i in (1..5) %}
+                    {% for item in site.data.content.criteria.default %}
                     <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria {{ i }}
-                        <i class="bi bi-x-lg"></i>
+                        {{ item.title }}
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     {% endfor %}
                 </div>
@@ -15,10 +15,10 @@
             <div class="border-bottom mb-3">
                 {% include sidebars/sidebar-section-header.html title="Added Criteria" link="Clear All (#)" %}
                 <div class="mb-3">
-                    {% for i in (1..5) %}
+                    {% for item in site.data.content.criteria.added %}
                     <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria {{ i }}
-                        <i class="bi bi-x-lg"></i>
+                        {{ item.title }}
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     {% endfor %}
                 </div>

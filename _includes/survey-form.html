@@ -148,7 +148,7 @@
                 <div class="d-table table-bordered table-hover w-100 mt-4">
                     <div class="d-table-row table-header sticky-top" style="top: var(--navbar-height);">
                         {% for column in site.data.forms.topics_table.header %}
-                        <div class="d-table-cell align-middle p-3" {% unless forloop.first %}style="width: 15%;"{% endunless %}>
+                        <div class="d-table-cell align-middle" {% unless forloop.first %}style="width: 15%;"{% endunless %}>
                             <div class="d-flex align-items-center">
                                 <div class="form-check d-flex align-items-center m-0">
                                     <input class="form-check-input me-2 mt-0" type="checkbox" value="" id="header_check_{{forloop.index}}">
@@ -164,7 +164,7 @@
                     {% for row in site.data.forms.topics_table.rows %}
                         <div class="d-table-row">
                             {% assign row_index = forloop.index %}
-                            <div class="d-table-cell align-middle p-3">
+                            <div class="d-table-cell align-middle">
                                 <div class="form-check m-0">
                                     <input class="form-check-input" type="checkbox" value="" id="row_{{forloop.index}}">
                                     <label class="form-check-label" for="row_{{forloop.index}}">
@@ -173,7 +173,7 @@
                                 </div>
                             </div>
                             {% for i in (1..4) %}
-                            <div class="d-table-cell align-middle p-3" style="width: 15%;">
+                            <div class="d-table-cell align-middle" style="width: 15%;">
                                 <div class="form-check m-0">
                                     <input class="form-check-input" type="checkbox" value="" id="row_{{row_index}}_checkbox_{{i}}">
                                     <label class="form-check-label visually-hidden" for="row_{{row_index}}_checkbox_{{i}}">

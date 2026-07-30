@@ -3,13 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: 'California - 20001'
+title: 'Applicant'
 menu: search.html
-sidebar: sidebars/requirement-sidebar.html
-sidebar_right: true
 ---
 
 <div>
-    {% include components/breadcrumb.html links="survey" %}
-    {% include requirement.html %}
+    {% include components/breadcrumb.html links="survey,requirement" %}
+    {% include defined-term.html %}
 </div>

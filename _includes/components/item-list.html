@@ -7,7 +7,7 @@
 <div class="d-table table-hover w-100 {% if include.type %}table-{{ include.type }}{% endif %}">
   <div class="d-table-row table-header sticky-top" style="top: var(--navbar-height);">
     {% for header in table_content.header %}
-      <div class="d-table-cell align-middle p-3 {% if forloop.last and include.actions %}text-end{% endif %} {% if header.sortable %}sortable{% endif %}">
+      <div class="d-table-cell align-middle {% if forloop.last and include.actions %}text-end{% endif %} {% if header.sortable %}sortable{% endif %}">
           <label class="form-check-label form-label" for="header_check_{{forloop.index}}">
             {% if header.sortable %}<a href="" class="d-flex align-items-center">{% endif %}
               {{ header.title }}
@@ -21,29 +21,29 @@
     <div class="d-table-row position-relative">
       {% case include.content %}
         {% when 'agency_guides' %}
-          <div class="d-table-cell align-middle p-3">
+          <div class="d-table-cell align-middle">
             <a href="{{ row.link | relative_url }}" class="stretched-link" target="_blank">{{ row.title }}</a>
           </div>
-          <div class="d-table-cell align-middle p-3">{{ row.agency }}</div>
+          <div class="d-table-cell align-middle">{{ row.agency }}</div>
         {% when 'federal' %}
-          <div class="d-table-cell align-middle p-3">
+          <div class="d-table-cell align-middle">
             <a href="{{ row.link | relative_url }}" class="stretched-link" target="_blank">{{ row.title }}</a>
           </div>
         {% when 'users' %}
-          <div class="d-table-cell align-middle p-3">
+          <div class="d-table-cell align-middle">
             <a href="{{ site.data.navigation.settings_user.link | relative_url }}?title={{ row.name.first_name }} {{ row.name.last_name }}" class="stretched-link">{{ row.name.first_name }} {{ row.name.last_name }}</a>
           </div>
-          <div class="d-table-cell align-middle p-3">{{ row.job_title }}</div>
-          <div class="d-table-cell align-middle p-3">{{ row.role }}</div>
-          <div class="d-table-cell align-middle p-3">{{ row.status }}</div>
+          <div class="d-table-cell align-middle">{{ row.job_title }}</div>
+          <div class="d-table-cell align-middle">{{ row.role }}</div>
+          <div class="d-table-cell align-middle">{{ row.status }}</div>
         {% else %}
-          <div class="d-table-cell align-middle p-3">
+          <div class="d-table-cell align-middle">
             <a href="{{ row.link | relative_url }}" class="stretched-link">{{ row.title }}</a>
           </div>
-          <div class="d-table-cell align-middle p-3">{{ row.date }}</div>
+          <div class="d-table-cell align-middle">{{ "now" | date: "%b %d, %Y" }}</div>
       {% endcase %}
       {% if include.actions %}
-        <div class="d-table-cell align-middle p-3 text-end">
+        <div class="d-table-cell align-middle text-end">
           <div class="dropdown" style="z-index: 1;">
             <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="bi bi-three-dots"></i>

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Winnow POC</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="/assets/css/main.css" />
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -131,8 +131,16 @@
           <li><button class="dropdown-item" type="button">Export</button></li>
           <li class="dropdown-divider"></li>
           <li><h6 class="dropdown-header">Survey Layout</h6></li>
-          <li><button class="dropdown-item" type="button">Table Layout</button></li>
-          <li><button class="dropdown-item" type="button">List Layout</button></li>
+          <li>
+            <button class="dropdown-item" type="button">
+              <i class="bi bi-table"></i> Table Layout
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item active" type="button">
+              <i class="bi bi-list"></i> List Layout
+            </button>
+          </li>
           <li class="dropdown-divider"></li>
           <li><button class="dropdown-item" type="button">Survey Details</button></li>
           <li><button class="dropdown-item" type="button">Show Hints</button></li>
@@ -194,7 +202,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #1</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20001</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -204,12 +212,12 @@
                 </ul>
             </div>
             <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult1" aria-expanded="false" aria-controls="collapseResult1" onclick="toggleBtnClass(resultToggle1, 'bi-chevron-down', 'bi-chevron-left')">
-                <i class="bi bi-chevron-left" id="resultToggle1"></i>
+                <i class="bi bi-chevron-down" id="resultToggle1"></i>
             </button>
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult1">
+        <div class="collapse  show" id="collapseResult1">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -251,23 +259,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -275,15 +275,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -295,7 +305,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #2</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20002</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -310,7 +320,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult2">
+        <div class="collapse " id="collapseResult2">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -352,23 +362,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -376,15 +378,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -396,7 +408,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #3</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20003</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -411,7 +423,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult3">
+        <div class="collapse " id="collapseResult3">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -453,23 +465,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -477,15 +481,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -497,7 +511,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #4</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20004</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -512,7 +526,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult4">
+        <div class="collapse " id="collapseResult4">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -554,23 +568,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -578,15 +584,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -598,7 +614,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #5</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20005</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -613,7 +629,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult5">
+        <div class="collapse " id="collapseResult5">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -655,23 +671,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -679,15 +687,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -699,7 +717,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #6</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20006</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -714,7 +732,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult6">
+        <div class="collapse " id="collapseResult6">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -756,23 +774,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -780,15 +790,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -800,7 +820,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #7</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20007</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -815,7 +835,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult7">
+        <div class="collapse " id="collapseResult7">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -857,23 +877,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -881,15 +893,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -901,7 +923,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #8</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20008</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -916,7 +938,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult8">
+        <div class="collapse " id="collapseResult8">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -958,23 +980,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -982,15 +996,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -1002,7 +1026,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #9</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20009</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -1017,7 +1041,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult9">
+        <div class="collapse " id="collapseResult9">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -1059,23 +1083,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -1083,15 +1099,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -1103,7 +1129,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="/requirement.html">Result - #10</a></h5>
+                <h5 class="m-0"><a href="/requirement.html">California - 20010</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -1118,7 +1144,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult10">
+        <div class="collapse " id="collapseResult10">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="/citation.html">Ala. Code § 24-8-6(a)</a>.
@@ -1160,23 +1186,15 @@
             <p class="">
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 1</a>
+                    <a href="/defined-term.html">Applicant</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 2</a>
+                    <a href="/defined-term.html">Credit Denial</a>
                 </span>
                 
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 3</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 4</a>
-                </span>
-                
-                <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="/defined-term.html">Term 5</a>
+                    <a href="/defined-term.html">Creditor</a>
                 </span>
                 
             </p>
@@ -1184,15 +1202,25 @@
             <label class="form-label">Topic &amp; Category Applicability</label>
             <p>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Anti-Discrimination:
+                    <span class="fw-normal">
+                        
+                            Disclosures, 
+                        
+                            Practice Restrictions
+                        
+                    </span>
+                </span>
                 
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
-                
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                <span class="badge text-bg-light border">Affiliated Business:
+                    <span class="fw-normal">
+                        
+                            Fees, 
+                        
+                            Disclosures
+                        
+                    </span>
+                </span>
                 
             </p>
             
@@ -1233,28 +1261,18 @@
                 <div class="mb-3">
                     
                     <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria 1
-                        <i class="bi bi-x-lg"></i>
+                        Mortages
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                     <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria 2
-                        <i class="bi bi-x-lg"></i>
+                        Origination
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                     <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria 3
-                        <i class="bi bi-x-lg"></i>
-                    </a>
-                    
-                    <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria 4
-                        <i class="bi bi-x-lg"></i>
-                    </a>
-                    
-                    <a class="btn btn-sm btn-outline-secondary mb-1">
-                        Criteria 5
-                        <i class="bi bi-x-lg"></i>
+                        California
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                 </div>
@@ -1269,28 +1287,18 @@
                 <div class="mb-3">
                     
                     <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria 1
-                        <i class="bi bi-x-lg"></i>
+                        National Bank
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                     <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria 2
-                        <i class="bi bi-x-lg"></i>
+                        Affiliated Business: Fees
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                     <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria 3
-                        <i class="bi bi-x-lg"></i>
-                    </a>
-                    
-                    <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria 4
-                        <i class="bi bi-x-lg"></i>
-                    </a>
-                    
-                    <a class="btn btn-sm btn-outline-primary mb-1">
-                        Criteria 5
-                        <i class="bi bi-x-lg"></i>
+                        Affiliated Business: Disclosures
+                        <i class="bi bi-x-lg" onclick="this.parentElement.remove()"></i>
                     </a>
                     
                 </div>
@@ -1500,7 +1508,7 @@
     </div>
   </div>
 </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

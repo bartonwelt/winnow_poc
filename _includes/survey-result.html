@@ -2,7 +2,7 @@
     <div class="card-header bg-light sticky-top" style="top: var(--navbar-height); z-index: 1019;">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                <h5 class="m-0"><a href="{{ site.data.navigation.requirement.link | relative_url }}">Result - #{{ include.index }}</a></h5>
+                <h5 class="m-0"><a href="{{ site.data.navigation.requirement.link | relative_url }}">California - {{ include.index | plus: "20000" }}</a></h5>
                 <ul class="list-inline small mb-0 mt-1">
                     <li class="list-inline-item text-muted"><i class="bi bi-file-diff me-1"></i><a href="#">2 Versions</a></li>
                     <li class="list-inline-item text-muted">&bull;</li>
@@ -12,12 +12,12 @@
                 </ul>
             </div>
             <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" href="#collapseResult{{ include.index }}" aria-expanded="false" aria-controls="collapseResult{{ include.index }}" onclick="toggleBtnClass(resultToggle{{ include.index }}, 'bi-chevron-down', 'bi-chevron-left')">
-                <i class="bi bi-chevron-left" id="resultToggle{{ include.index }}"></i>
+                <i class="bi bi-chevron-{% if include.index == 1 %}down{% else %}left{% endif %}" id="resultToggle{{ include.index }}"></i>
             </button>
         </div>
     </div>
     <div class="card-body">
-        <div class="collapse" id="collapseResult{{ include.index }}">
+        <div class="collapse {% if include.index == 1 %} show{% endif %}" id="collapseResult{{ include.index }}">
             <label class="form-label">Trigger</label>
             <p>
                 When a person or other entity's business includes engaging in residential real estate related transactions. <a href="{{ site.data.navigation.citation.link | relative_url }}">Ala. Code § 24-8-6(a)</a>.
@@ -57,17 +57,23 @@
             </p>
             <label class="form-label">Defined Terms</label>
             <p class="{% if include.search %}m-0{% endif %}">
-                {% for i in (1..5) %}
+                {% for item in site.data.content.requirement.terms %}
                 <span class="badge text-bg-light border fw-normal mb-1">
-                    <a href="{{ site.data.navigation.defined_term.link | relative_url }}">Term {{ i }}</a>
+                    <a href="{{ site.data.navigation.defined_term.link | relative_url }}">{{ item.title }}</a>
                 </span>
                 {% endfor %}
             </p>
             {% unless include.search %}
             <label class="form-label">Topic & Category Applicability</label>
             <p>
-                {% for i in (1..5) %}
-                <span class="badge text-bg-light border">Category: <span class="fw-normal">Topic</span></span>
+                {% for topic in site.data.content.requirement.topics %}
+                <span class="badge text-bg-light border">{{ topic.title | append: ":" }}
+                    <span class="fw-normal">
+                        {% for category in topic.categories %}
+                            {{ category.title }}{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </span>
+                </span>
                 {% endfor %}
             </p>
             {% endunless %}

@@ -14,4 +14,32 @@ requirement:
       value: Mar 20, 2021
     - title: Ending Effective Date
       value: N/A
-      
+  terms:
+    - title: Applicant
+      desc: A natural person who applies for credit primarily for personal, family or household purposes.
+      citation: Cal. Civ. Code § 1787.2(e)(1)
+    - title: Credit Denial
+      desc: A denial or revocation of credit, a change in the terms of an existing credit arrangement, or a refusal to grant credit in substantially the amount or on substantially the terms requested. The term does not include a refusal to extend additional credit under an existing credit arrangement where the applicant is delinquent or otherwise in default, or where such additional credit would exceed a previously established credit limit without a specific written application or written request for an increase in the credit limit.
+      citation: Cal. Civ. Code § 1787.2(e)(2)
+    - title: Creditor
+      desc: Refers only to creditors who regularly extend, or arrange for the extension of, credit whether in connection with loans, sales of property or services, or otherwise.
+      citation: Cal. Civ. Code § 1787.2(e)(3)
+  topics:
+    - title: Anti-Discrimination
+      categories:
+        - title: Disclosures
+        - title: Practice Restrictions
+    - title: Affiliated Business
+      categories:
+      - title: Fees
+      - title: Disclosures
+        
+criteria:
+  default:
+    - title: Mortages
+    - title: Origination
+    - title: California
+  added:
+    - title: National Bank
+    - title: 'Affiliated Business: Fees'
+    - title: 'Affiliated Business: Disclosures'

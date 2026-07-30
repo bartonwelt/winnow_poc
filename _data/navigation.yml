@@ -50,12 +50,15 @@ survey:
   link: /survey.html
 
 requirement:
+  title: "California - 20001"
   link: /requirement.html
 
 citation:
+  title: "Cal. Civ. Code § 1787.2(e)(1)"
   link: /citation.html
 
 defined_term:
+  title: "Applicant"
   link: /defined-term.html
 
 home:
